@@ -1,0 +1,13 @@
+.container {
+  grid-area: content;
+  width: 97vw;
+  margin: 0 auto;
+	padding: 0 10px;
+  min-height: 100%;
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 980px;
+  }
+}

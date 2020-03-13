@@ -1,0 +1,67 @@
+.tags {
+	display: flex;
+	flex-direction: row;
+	padding: 6px 0;
+}
+
+.tags div {
+	position: relative;
+	border: 1px solid var(--gray);
+	border-radius: 3px;
+	padding: 4px 8px 4px 28px;
+	transition: all 0.4s ease;
+	font-weight: bold;
+	color: var(--medium-gray);
+}
+
+.tags div:hover,
+.tags div:active {
+	background: var(--light-gray);
+}
+
+.tags div:before {
+	color: var(--medium-gray);
+	content: '#';
+	left: 8px;
+	position: absolute;
+}
+
+.tags:last-child {
+	margin-right: 0;
+}
+
+.oop {
+	background-color: rgb(255, 234, 0);
+}
+
+.blogging {
+	background-color: rgb(255, 165, 165);
+}
+
+.web-tech {
+	background-color: rgb(124, 179, 66);
+}
+
+.weekend-project {
+	background-color: rgb(79, 195, 247);
+}
+
+.in-depth {
+	background-color: rgb(237, 137, 255);
+}
+
+.automation {
+	background-color: rgb(255, 191, 28);
+}
+
+@media (min-width : 768px) {
+	.container .tags {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 992px) {
+	.container .tags {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}

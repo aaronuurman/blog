@@ -1,0 +1,38 @@
+header {
+	grid-area: header;
+	background: var(--intense-blue);
+	color: var(--white);
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+}
+
+header a {
+	cursor: pointer;
+	color: var(--white);
+}
+
+header .container {
+	position: relative;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	height: 52px;
+	justify-content: center;
+	align-content: center;
+  width: 97vw;
+  margin: 0 auto;
+	padding: 0 10px;
+}
+
+header .container h2 {
+	font-family: 'Spectral';
+	text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+  header .container {
+    max-width: 980px;
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "aaronuurman.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gatsby develop -p 9988 -o",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mdx-js/mdx": "^1.5.7",
+    "@mdx-js/react": "^1.5.7",
+    "gatsby": "^2.19.39",
+    "gatsby-plugin-mdx": "^1.0.80",
+    "gatsby-source-filesystem": "^2.1.53",
+    "prism-react-renderer": "^1.0.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-live": "^2.2.2"
+  }
+}

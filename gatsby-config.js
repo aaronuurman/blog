@@ -1,0 +1,36 @@
+module.exports = {
+	siteMetadata: {
+		title: `Aaron Uurman`,
+		description: `Software developer, blogger`,
+		siteUrl: `https://aaronuurman.com`,
+		author: `Aaron Uurman`,
+		socialMedia:[
+			`https://github.com/aaronuurman`,
+			`https://www.linkedin.com/in/aaronuurman`,
+			`https://twitter.com/aaronuurman`
+		],
+		navbar: [
+			`tags`,
+			`about`,
+			`contact`
+		]
+	},
+
+	plugins: [
+		{
+			resolve: `gatsby-plugin-mdx`,
+			options: {
+				extensions: [`.mdx`, `.md`],
+			},
+		},
+
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${__dirname}/src/posts`,
+				name: `posts`,
+			},
+		},
+	],
+
+};

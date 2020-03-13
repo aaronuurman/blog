@@ -1,0 +1,43 @@
+:root {
+	/*Colors*/
+	--light-gray: rgb(248, 248, 248);
+	--gray: rgb(238, 238, 238);
+	--medium-gray: rgb(79, 79, 81);
+	--dark-gray: rgb(24, 24, 24);
+	--blue: rgb(21, 101, 192);
+	--intense-blue:rgb(11, 86, 165);
+	--white: rgb(255, 255, 255);
+	--yellow: rgb(254, 205, 0);
+
+	--twitter-blue: rgb(29, 161, 242);
+	--github-black: rgb(34, 31, 32);
+	--linkedIn-blue: rgb(0, 119, 181);
+
+	/*Breakpoints*/
+	--breakpoint-mobile: 320px;
+	--breakpoint-tablet: 768px;
+	--breakpoint-laptop: 992px;
+	--breakpoint-desktop: 1200px;
+	--breakpoint-widescreen: 2560px;
+
+	/*Text*/
+	--fontfamily: 'Montserrat';
+
+	--p-mobile: 16px;
+	--p-widescreen: 24px;
+
+	--h1-mobile: 32px;
+	--h1-widescreen: 48px;
+
+	--h2-mobile: 26px;
+	--h2-widescreen: 36px;
+
+	--h3-mobile: 22px;
+	--h3-widescreen: 28px;
+
+	--h4-mobile: 18px;
+	--h4-widescreen: 18px;
+
+	/*Animation*/
+	--animations-speed: 0.4s;
+}
