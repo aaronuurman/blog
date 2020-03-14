@@ -19,7 +19,7 @@ const PostOverview = ({ title, date, image, tags, slug, overview, timeToRead }) 
 			</Link>
 			<div className={[classes.overviewfooter]}>
 				<div>{date}</div>
-				<div>{timeToRead} min read</div>
+				<div>{timeToRead} minutes to read</div>
 			</div>
 		</section>
 	</article>

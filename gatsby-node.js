@@ -26,9 +26,9 @@ exports.createPages = ({ actions, graphql }) => {
 		}
 
 	`).then(result => {
-		if (result.errors) {
-			return Promise.reject(result.errors)
-		}
+    if (result.errors) {
+      throw result.errors
+    }
 
 		const posts = result.data.allMdx.nodes;
 		// create page for each mdx file

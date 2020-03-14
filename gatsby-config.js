@@ -25,6 +25,14 @@ module.exports = {
 				extensions: [`.mdx`, `.md`],
 				gatsbyRemarkPlugins: [
 					{
+						resolve: 'gatsby-remark-graph',
+						options: {
+							// this is the language in your code-block that triggers mermaid parsing
+							language: 'mermaid', // default
+							theme: 'neutral' // could also be dark, forest, or neutral
+						}
+					},
+					{
 						resolve: `gatsby-remark-images`,
 						options: {
 							maxWidth: 980,

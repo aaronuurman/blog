@@ -1,0 +1,14 @@
+.imgprovider,
+.imgprovider a {
+	color: var(--dark-gray);
+	font-style: italic;
+}
+
+.imgprovider {
+	text-align: center;
+}
+
+.imgprovider a:hover {
+	text-decoration: underline;
+	text-decoration-color: var(--intense-blue);
+}
