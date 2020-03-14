@@ -19,7 +19,7 @@ article	section a {
 }
 
 article	section a div h2 {
-	margin-bottom: 1em;
+	margin: 1em 0;
 }
 
 article	section .overviewfooter {
@@ -29,7 +29,7 @@ article	section .overviewfooter {
 	font-weight: bold;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	margin-top: 1em;
+	margin-top: 2em;
 }
 
 article	section .overviewfooter div:last-child {

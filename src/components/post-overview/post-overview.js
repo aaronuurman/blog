@@ -2,14 +2,15 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image';
 import classes from './post-overview.module.css'
-//import TagsList from '../tags-list/tags-list'
+import TagsList from '../tags-list/tags-list'
 
-const PostOverview = ({ title, date, image, slug, overview, timeToRead }) => (
+const PostOverview = ({ title, date, image, tags, slug, overview, timeToRead }) => (
 	<article>
 		<Link to={slug}>
 			<Img className={[classes.cover]} fluid={image} />
 		</Link>
 		<section>
+			<TagsList tags={tags} />
 			<Link to={slug}>
 				<div>
 					<h2>{title}</h2>
