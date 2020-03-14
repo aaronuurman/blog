@@ -1,12 +1,12 @@
 .menuwrap .toggler {
-	position: absolute;
-	cursor: pointer;
-	width: 52px;
-	height: 52px;
-	right: 0;
 	top: 0;
+	right: 0;
 	z-index: 2;
 	opacity: 0;
+	width: 52px;
+	height: 52px;
+	cursor: pointer;
+	position: absolute;
 }
 
 .menuwrap .toggler:checked~nav {
@@ -28,37 +28,37 @@
 }
 
 .menuwrap .hamburger {
-	position: absolute;
 	top: 0;
 	right: 0;
 	z-index: 1;
 	width: 52px;
 	height: 52px;
 	display: flex;
+	padding: 0.8rem;
+	position: absolute;
 	align-items: center;
 	justify-content: center;
-	padding: 0.8rem;
 }
 
 .menuwrap .hamburger div {
-	position: relative;
 	width: 100%;
 	height: 2px;
-	background: var(--light-gray);
 	display: flex;
+	position: relative;
 	align-items: center;
 	justify-content: center;
+	background: var(--light-gray);
 	transition: all var(--animations-speed) ease;
 }
 
 .menuwrap .hamburger div:before,
 .menuwrap .hamburger div:after {
-	content: '';
-	position: absolute;
 	z-index: 1;
 	top: -10px;
+	content: '';
 	width: 100%;
 	height: 2px;
+	position: absolute;
 	background: inherit;
 }
 

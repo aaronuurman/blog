@@ -3,11 +3,13 @@
 }
 
 .p_y_2 {
-	padding: 2em 0;
+	padding-top: 2em;
+	padding-bottom: 2em;
 }
 
 .p_x_08 {
-	padding: 0 0.8em;
+	padding-left: 0.8em;
+	padding-right: 0.8em;
 }
 
 .m_t_2 {

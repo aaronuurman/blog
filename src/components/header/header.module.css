@@ -1,12 +1,12 @@
 header {
-	grid-area: header;
-	background: var(--intense-blue);
-	color: var(--white);
-	width: 100%;
-	position: fixed;
 	top: 0;
 	left: 0;
+	width: 100%;
 	z-index: 999;
+	position: fixed;
+	grid-area: header;
+	color: var(--white);
+	background: var(--intense-blue);
 }
 
 header a {
@@ -15,17 +15,18 @@ header a {
 }
 
 header .container {
-	position: relative;
-	display: grid;
-	grid-template-columns: auto 1fr;
+	width: 97vw;
 	height: 52px;
-	justify-content: center;
+	display: grid;
+	margin: 0 auto;
+	position: relative;
 	align-content: center;
-  width: 97vw;
-  margin: 0 auto;
+	justify-content: center;
+	grid-template-columns: auto 1fr;
 }
 
 header .container h2 {
+	font-size: 1.4em;
 	font-family: 'Spectral';
 	text-transform: uppercase;
 }

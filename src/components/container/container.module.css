@@ -1,8 +1,8 @@
 .container {
-	grid-area: content;
 	width: 97vw;
 	margin: 0 auto;
 	min-height: 100%;
+	grid-area: content;
 }
 
 @media (min-width: 992px) {

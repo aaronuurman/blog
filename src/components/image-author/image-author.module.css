@@ -1,7 +1,7 @@
 .imgprovider,
 .imgprovider a {
-	color: var(--dark-gray);
 	font-style: italic;
+	color: var(--dark-gray);
 }
 
 .imgprovider {

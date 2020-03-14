@@ -1,0 +1,46 @@
+p {
+	font-size: var(--p-mobile);
+  line-height: 24.5px;
+}
+
+h1 {
+	font-size: var(--h1-mobile);
+	padding: 0.8em 0;
+}
+
+h2 {
+	font-size: var(--h2-mobile);
+	padding: 0.6em 0;
+}
+
+h3 {
+	font-size: var(--h3-mobile);
+	padding: 0.4em 0;
+}
+
+h4 {
+	font-size: var(--h4-mobile);
+}
+
+@media (min-width : 768px) {
+	p {
+		font-size: var(--p-desktop);
+		line-height: 28.5px;
+	}
+
+	h1 {
+		font-size: var(--h1-desktop);
+	}
+
+	h2 {
+		font-size: var(--h2-desktop);
+	}
+
+	h3 {
+		font-size: var(--h3-desktop);
+	}
+
+	h4 {
+		font-size: var(--h4-desktop);
+	}
+}

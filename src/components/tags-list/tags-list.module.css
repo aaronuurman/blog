@@ -4,13 +4,12 @@
 }
 
 .tags div {
-	position: relative;
-	border: 1px solid var(--gray);
 	border-radius: 3px;
+	position: relative;
 	padding: 4px 8px 4px 28px;
 	transition: all 0.4s ease;
-	font-weight: bold;
 	color: var(--medium-gray);
+	border: 1px solid var(--gray);
 }
 
 .tags div:hover,
@@ -19,10 +18,10 @@
 }
 
 .tags div:before {
-	color: var(--medium-gray);
-	content: '#';
 	left: 8px;
+	content: '#';
 	position: absolute;
+	color: var(--medium-gray);
 }
 
 .tags:last-child {

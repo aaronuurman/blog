@@ -21,22 +21,20 @@
 	--breakpoint-widescreen: 2560px;
 
 	/*Text*/
-	--fontfamily: 'Montserrat';
-
 	--p-mobile: 16px;
-	--p-widescreen: 24px;
+	--p-desktop: 20px;
 
 	--h1-mobile: 32px;
-	--h1-widescreen: 48px;
+	--h1-desktop: 42px;
 
 	--h2-mobile: 26px;
-	--h2-widescreen: 36px;
+	--h2-desktop: 36px;
 
 	--h3-mobile: 22px;
-	--h3-widescreen: 28px;
+	--h3-desktop: 28px;
 
 	--h4-mobile: 18px;
-	--h4-widescreen: 18px;
+	--h4-desktop: 22px;
 
 	/*Animation*/
 	--animations-speed: 0.4s;

@@ -14,7 +14,7 @@ const PostOverview = ({ title, date, image, tags, slug, overview, timeToRead }) 
 			<TagsList tags={tags} />
 			<Link to={slug}>
 				<div>
-					<h2 className={[spacing.m_y_1]}>{title}</h2>
+					<h2>{title}</h2>
 					<p>{overview}</p>
 				</div>
 			</Link>
