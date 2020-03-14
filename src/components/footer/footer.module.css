@@ -1,11 +1,10 @@
 footer {
-  grid-area: footer;
-  background: var(--intense-blue);
-  color: var(--white);
-  text-align: center;
+	grid-area: footer;
+	background: var(--intense-blue);
+	color: var(--white);
+	text-align: center;
 	font-size: 14px;
-  padding: 2em;
-  height: 90px;
+	height: 90px;
 }
 
 footer .container div a {
@@ -13,21 +12,20 @@ footer .container div a {
 }
 
 footer .container {
-  width: 97vw;
-  margin: 0 auto;
-  padding: 0 10px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+	width: 97vw;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 }
 
 footer .container > div{
-  text-align: left;
-  display: flex;
-  align-items: center;
+	text-align: left;
+	display: flex;
+	align-items: center;
 }
 
 @media (min-width: 992px) {
-  footer .container {
-    max-width: 980px;
-  }
+	footer .container {
+		max-width: 980px;
+	}
 }

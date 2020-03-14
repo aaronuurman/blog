@@ -3,9 +3,9 @@ import '../../styles/main.css';
 import PropTypes from 'prop-types';
 import Footer from '../footer/footer';
 import Header from '../header/header';
-import classes from './layout.module.css';
 import Container from '../container/container';
 import Navigation from '../navigation/navigation';
+import spacing from '../../styles/spacing.module.css';
 import SocialMedia from '../social-media/social-media';
 import { useSiteMetadata } from '../../hooks/useSiteMetadata';
 
@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
 			<Header siteTitle={title}>
 				<Navigation links={navbar}/>
 			</Header>
-			<Container cssClasses={[classes.py2]}>
+			<Container cssClasses={[spacing.p_y_2]}>
 				{children}
 			</Container>
 			<Footer copyright={title}>

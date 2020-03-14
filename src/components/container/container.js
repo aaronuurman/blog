@@ -1,9 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import classes from './container.module.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import classes from './container.module.css';
+import spacing from '../../styles/spacing.module.css';
 
 const Container = ({cssClasses, children }) => (
-	<div className={`${classes.container} ${cssClasses.join(', ')}`}>
+	<div className={`${classes.container} ${spacing.p_x_08} ${cssClasses.join(', ')}`}>
 		{children}
 	</div>
 )

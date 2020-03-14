@@ -5,7 +5,6 @@ import classes from '../styles/pages/index.module.css';
 import PostOverview from '../components/post-overview/post-overview';
 
 export default ({data}) => {
-	console.log(data.allMdx.nodes);
 	return (
 		<>
 		<Layout>

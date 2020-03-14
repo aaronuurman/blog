@@ -2,7 +2,6 @@ article {
 	background: var(--white);
 	transition: all .3s ease-in-out;
 	box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
-	margin-top: 2em;
 }
 
 article a .cover {
@@ -11,15 +10,10 @@ article a .cover {
 
 article	section {
 	position: relative;
-	padding: 1em;
 }
 
 article	section a {
 	color: var(--dark-gray);
-}
-
-article	section a div h2 {
-	margin: 1em 0;
 }
 
 article	section .overviewfooter {
@@ -29,7 +23,6 @@ article	section .overviewfooter {
 	font-weight: bold;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	margin-top: 2em;
 }
 
 article	section .overviewfooter div:last-child {

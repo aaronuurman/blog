@@ -2,11 +2,11 @@
 
 .socialmedia {
 	list-style-type: none;
-	text-align: right;
+	justify-items: end;
 }
 
 .socialmedia li {
-	padding-right: 1.6em;
+	padding-left: 1.6em;
 	float: right;
 }
 

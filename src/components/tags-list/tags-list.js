@@ -1,8 +1,9 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import { slugify } from '../../utils/slugify'
-import classes from './tags-list.module.css'
+import React from 'react';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import classes from './tags-list.module.css';
+import { slugify } from '../../utils/slugify';
+import { camelize } from '../../utils/camelize';
 
 const TagsList = ({ tags }) => {
 	if (tags === undefined || tags.length === 0) {
@@ -10,10 +11,10 @@ const TagsList = ({ tags }) => {
 	}
 
 	return (
-		<div className={classes.tags}>
+		<div className={[classes.tags]}>
 			{tags.map((tag, index) => (
 				<Link key={index} to={`/tag/${slugify(tag)}`}>
-					<div className={classes[slugify(tag)]}>
+					<div className={[classes[camelize(tag)]]}>
 						{tag}
 					</div>
 				</Link>
