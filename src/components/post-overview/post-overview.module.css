@@ -4,7 +4,7 @@ article {
 	box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
 }
 
-article a .cover {
+.postoverview a .cover {
 	height: 200px;
 }
 
@@ -16,35 +16,23 @@ article	section a {
 	color: var(--dark-gray);
 }
 
-article	section .overviewfooter {
-	display: grid;
-	font-size: 0.8em;
-	color: var(--medium-gray);
-	text-transform: uppercase;
-	grid-template-columns: repeat(2, 1fr);
-}
-
-article	section .overviewfooter div:last-child {
-	text-align: right;
-}
-
-article:hover {
+.postoverview:hover {
 	transform: scale(1.03);
 	box-shadow: 0 1px 0 rgba(0, 0, 0, .15);
 }
 
 @media (min-width : 768px) {
-	article a .cover {
+	.postoverview a .cover {
 		height: 260px;
 	}
 
-	article:nth-child(6n+4),
-	article:nth-child(6n+1) {
+	.postoverview:nth-child(6n+4),
+	.postoverview:nth-child(6n+1) {
 		grid-column-start: span 2;
 	}
 		
-	article:nth-child(6n+4) a .cover,
-	article:nth-child(6n+1) a .cover {
+	.postoverview:nth-child(6n+4) a .cover,
+	.postoverview:nth-child(6n+1) a .cover {
 		height: 360px;
 	}
 }

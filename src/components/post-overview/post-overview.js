@@ -4,9 +4,10 @@ import Img from 'gatsby-image';
 import TagsList from '../tags-list/tags-list';
 import classes from './post-overview.module.css';
 import spacing from '../../styles/spacing.module.css';
+import PostOverviewFooter from '../post-overview-footer/post-overview-footer';
 
 const PostOverview = ({ title, date, image, tags, slug, overview, timeToRead }) => (
-	<article>
+	<article className={[classes.postoverview]}>
 		<Link to={slug}>
 			<Img className={[classes.cover]} fluid={image} />
 		</Link>
@@ -18,10 +19,7 @@ const PostOverview = ({ title, date, image, tags, slug, overview, timeToRead }) 
 					<p>{overview}</p>
 				</div>
 			</Link>
-			<div className={[classes.overviewfooter, spacing.m_t_2].join(' ')}>
-				<div>{date}</div>
-				<div>{timeToRead} minutes to read</div>
-			</div>
+			<PostOverviewFooter date={date} timeToRead={timeToRead} />
 		</section>
 	</article>
 )

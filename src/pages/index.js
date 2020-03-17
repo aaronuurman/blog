@@ -1,7 +1,7 @@
 import React from 'react';
 import SEO from '../components/seo/seo';
 import Layout  from '../components/layout/layout';
-import classes from '../styles/pages/index.module.css';
+import Articles from '../components/articles/articles';
 import PostOverview from '../components/post-overview/post-overview';
 
 export default ({data}) => {
@@ -9,26 +9,26 @@ export default ({data}) => {
 		<>
 		<Layout>
 			<SEO title="Latest blog posts" />
-			<div className={[classes.articles]}>
+			<Articles>
 				{data.allMdx.nodes.map(({ 
-					id, 
-					excerpt, 
-					frontmatter, 
-					timeToRead, 
-					fields,
-				}) => (
-					<PostOverview
-						key={id}
-						title={frontmatter.title}
-						date={frontmatter.date}
-						image={frontmatter.image.childImageSharp.fluid}
-						tags={frontmatter.tags}
-						overview={excerpt}
-						timeToRead={timeToRead}
-						slug={fields.slug}
-					/>
-				))}
-			</div>
+						id, 
+						excerpt, 
+						frontmatter, 
+						timeToRead, 
+						fields,
+					}) => (
+						<PostOverview
+							key={id}
+							title={frontmatter.title}
+							date={frontmatter.date}
+							image={frontmatter.image.childImageSharp.fluid}
+							tags={frontmatter.tags}
+							overview={excerpt}
+							timeToRead={timeToRead}
+							slug={fields.slug}
+						/>
+					))}
+			</Articles>
 		</Layout>
 		</>
 	);
@@ -54,8 +54,6 @@ export const query = graphql`
 							}
 						}
 					}
-					imageAuthor
-					imageProvider
 					tags
 				}
 				timeToRead
