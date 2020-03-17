@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+import Article from '../article/article';
 import TagsList from '../tags-list/tags-list';
 import classes from './post-overview.module.css';
 import spacing from '../../styles/spacing.module.css';
 import PostOverviewFooter from '../post-overview-footer/post-overview-footer';
 
 const PostOverview = ({ title, date, image, tags, slug, overview, timeToRead }) => (
-	<article className={[classes.postoverview]}>
+	<Article cssClasses={[classes.postoverview]}>
 		<Link to={slug}>
 			<Img className={[classes.cover]} fluid={image} />
 		</Link>
@@ -21,7 +22,7 @@ const PostOverview = ({ title, date, image, tags, slug, overview, timeToRead }) 
 			</Link>
 			<PostOverviewFooter date={date} timeToRead={timeToRead} />
 		</section>
-	</article>
+	</Article>
 )
 
 export default PostOverview

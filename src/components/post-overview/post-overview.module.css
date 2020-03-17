@@ -1,18 +1,12 @@
-article {
-	background: var(--white);
-	transition: all .3s ease-in-out;
-	box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
-}
-
 .postoverview a .cover {
 	height: 200px;
 }
 
-article	section {
+.postoverview	section {
 	position: relative;
 }
 
-article	section a {
+.postoverview	section a {
 	color: var(--dark-gray);
 }
 
