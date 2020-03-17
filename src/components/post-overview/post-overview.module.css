@@ -1,9 +1,15 @@
+.postoverview {
+	display: flex;
+	flex-flow: column;
+}
+
 .postoverview a .cover {
 	height: 200px;
 }
 
 .postoverview	section {
 	position: relative;
+	flex: 1;
 }
 
 .postoverview	section a {

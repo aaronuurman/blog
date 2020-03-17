@@ -20,8 +20,8 @@ const PostOverview = ({ title, date, image, tags, slug, overview, timeToRead }) 
 					<p>{overview}</p>
 				</div>
 			</Link>
-			<PostOverviewFooter date={date} timeToRead={timeToRead} />
 		</section>
+		<PostOverviewFooter date={date} timeToRead={timeToRead} />
 	</Article>
 )
 
