@@ -4,8 +4,11 @@ import { graphql } from 'gatsby';
 import SEO from '../components/seo/seo';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout  from '../components/layout/layout';
+import spacing from '../styles/spacing.module.css';
+import Article from '../components/article/article';
 import TagsList from '../components/tags-list/tags-list';
 //import Resources from '../components/resources'
+import classes from '../styles/single-post-template.module.css';
 import ImageAuthor from '../components/image-author/image-author';
 
 export default ({data}) => {
@@ -24,19 +27,19 @@ export default ({data}) => {
 		<>
 		<Layout>
 			<SEO title={title} />
-			<article>
-				<div className='article-header'>
-					<h1 className="pb-1">{title}</h1>
-					<TagsList tags={tags} />
-				</div>
-				<div className="pb-1">
-					<Img fluid={image.childImageSharp.fluid} />
-					<ImageAuthor author={imageAuthor} provider={imageProvider} />
-				</div>
+			<Article cssClasses={[spacing.p_x_08]}>
 				<section>
+					<h1>{title}</h1>
+					<TagsList tags={tags} />
+				</section>
+				<section>
+					<Img className={[classes.article_cover]} fluid={image.childImageSharp.fluid} />
+					<ImageAuthor author={imageAuthor} provider={imageProvider} />
+				</section>
+				<section className={[spacing.m_t_2]}>
 					<MDXRenderer>{data.mdx.body}</MDXRenderer>
 				</section>
-			</article>
+			</Article>
 		</Layout>
 		</>
 	);

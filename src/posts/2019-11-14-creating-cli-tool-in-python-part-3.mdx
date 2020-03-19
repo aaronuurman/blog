@@ -24,30 +24,28 @@ The second plan is to do a bit of refactoring and make a CLI tool more user-frie
 ### Overview
 When I started to implement a image option logic I relized that I need to make changes in busines logic and add a project folder option also with a validation. So after this change the whole logic will look as following:
 
-```mermaid
- graph LR
- assistant[Start];
- projPath{Project path valdiation}
- defaultProj[Current CLI location]
- proj{Directory validation}
- title{Title validation};
- img{Image validation};
- downloadImg[Download image];
- getImgMetadata[Get image data];
- createTemplate[Create blog post starter];
- assistant --> projPath;
- projPath -->|No| defaultProj
- defaultProj --> proj;
- projPath -->|Yes| proj;
- proj --> |Yes| title;
- proj --> |No| End(End);
- title -->|Yes| img;
- title -->|No| End;
- img -->|Yes| downloadImg;
- img -->|No| createTemplate;
- downloadImg --> getImgMetadata;
- getImgMetadata --> createTemplate;
- createTemplate --> End;
+```plantuml
+@startuml
+start
+if (Project path validation) then (invalid)
+	:"Current CLI location";
+else (valid)
+endif
+
+if (Directory validation) then (valid)
+	if (Title validation) then (valid)
+		if (Image validation) then (valid)
+			:"Download image";
+			:"Get image data";
+			:"Create blog post starter";
+		else (invalid)
+		endif
+	else (invalid)
+	endif
+else (invalid)
+endif
+end
+@enduml
 ```
 
 To start an application user will have to type on the command line following command:

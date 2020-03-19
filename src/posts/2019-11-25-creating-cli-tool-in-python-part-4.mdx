@@ -23,34 +23,31 @@ The current version of assistant contains quite a lot of structural changes, I m
 Blog command got a git task - now if I run the command it also creates a separate branch and makes an initial commit to it with starter file and image included. So that I can easily just jump into my Visual Studio and start writing a new blog post. This same post is also made using an assistant blog command, cool right?<br />
 
 This is a current flow of a blog command:
-```mermaid
-graph LR
-	assistant[Start];
-	projPath{Project path valdiation}
-	defaultProj[Current CLI location]
-	proj{Directory validation}
-	title{Title validation};
-	img{Image validation};
-	getImgMetadata[Get image data];
-	createNewBranch[Create a new branch];
-	downloadImg[Download image];
-	createTemplate[Create blog post starter];
-	commitAndPush[Commit and push changes];
-	assistant --> projPath;
-	projPath -->|No| defaultProj
-	defaultProj --> proj;
-	projPath -->|Yes| proj;
-	proj --> |Yes| title;
-	proj --> |No| End(End);
-	title -->|Yes| img;
-	title -->|No| End;
-	img -->|Yes| getImgMetadata;
-	img -->|No| End;
-	getImgMetadata --> createNewBranch;
-	createNewBranch --> downloadImg;
-	downloadImg --> createTemplate;
-	createTemplate --> commitAndPush;
-	commitAndPush --> End;
+```plantuml
+@startuml
+start
+if (Project path validation) then (invalid)
+	:"Current CLI location";
+else (valid)
+endif
+
+if (Directory validation) then (valid)
+	if (Title validation) then (valid)
+		if (Image validation) then (valid)
+			:"Get image data";
+			:"Create new branch";
+			:"Download image";
+			:"Create blog post starter";
+			:"Commit changes";
+			:"Push changes";
+		else (invalid)
+		endif
+	else (invalid)
+	endif
+else (invalid)
+endif
+end
+@enduml
 ```
 
 When runnind tool on command line it gives now a really good overview what tasks are running and how many left.

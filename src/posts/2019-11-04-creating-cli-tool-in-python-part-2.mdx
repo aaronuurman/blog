@@ -25,22 +25,20 @@ In this post I'm going to add the first command to the CLI tool, called "blog" a
 ### Overview
 In general, the whole business logic of the application will look like in the following schema.
 
-```mermaid
-graph LR
-	assistant[assistant blog title url];
-	title{Has title?};
-	img{Has image url?};
-	downloadImg[Download image to project image folder];
-	getImgMetadata[Get image data from Unsplash];
-	createTemplate[Create blog post template and fill data];
-	assistant --> title;
-	title -->|Yes| img;
-	title -->|No| End(End);
-	img -->|Yes| downloadImg;
-	img -->|No| createTemplate;
-	downloadImg --> getImgMetadata;
-	getImgMetadata --> createTemplate;
-	createTemplate --> End;
+```plantuml
+@startuml
+start
+if (Title validation) then (valid)
+	if (Image validation) then (valid)
+		:"Download image";
+		:"Get image data";
+		:"Create blog post starter";
+	else (invalid)
+	endif
+else (invalid)
+endif
+end
+@enduml
 ```
 
 To start an application user will have to type on the command line following command:
