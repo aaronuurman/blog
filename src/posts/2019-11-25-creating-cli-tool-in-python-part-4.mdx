@@ -25,6 +25,19 @@ Blog command got a git task - now if I run the command it also creates a separat
 This is a current flow of a blog command:
 ```plantuml
 @startuml
+skinparam DefaultTextAlignment center
+skinparam WrapWidth 120
+skinparam Shadowing false
+skinparam BackgroundColor White
+skinparam RectangleBorderThickness 0.5
+skinparam ActivityBorderThickness 0.5
+skinparam ActivityArrowFontSize 11
+skinparam AgentBorderThickness 0.5
+skinparam ArrowThickness 0.5
+skinparam ArrowFontStyle Plain
+skinparam NoteBorderThickness 0.5
+skinparam ClassBorderThickness 0.5
+
 start
 if (Project path validation) then (invalid)
 	:"Current CLI location";
