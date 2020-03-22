@@ -2,6 +2,10 @@
 	padding: 1em;
 }
 
+.p_b_1 {
+	padding-bottom: 1em;
+}
+
 .p_y_2 {
 	padding-top: 2em;
 	padding-bottom: 2em;
@@ -28,4 +32,8 @@
 
 .m_y_1 {
 	margin: 1em 0;
+}
+
+.m_y_2 {
+	margin: 2em 0;
 }

@@ -71,7 +71,7 @@
 	top: 52px;
 	left: 0;
 	width: 100%;
-	height: calc(100% - (52px + 90px));
+	height: 100%;
 	visibility: hidden;
 	overflow: hidden;
 	text-transform: capitalize;

@@ -1,0 +1,26 @@
+.resources summary {
+	cursor: pointer;
+	font-size: var(--h4-desktop);
+	color: var(--dark-gray);
+	outline: none;
+}
+
+.resources ul li a {
+	text-decoration-color: var(--intense-blue);
+	color: var(--dark-gray);
+	font-size: 1.2em;
+}
+
+.resources ul li a:hover {
+	text-decoration: underline;
+}
+
+.resources:active {
+	border: none;
+}
+
+@media (min-width : 768px) {
+	.resources summary {
+		font-size: var(--h4-mobile);
+	}
+}

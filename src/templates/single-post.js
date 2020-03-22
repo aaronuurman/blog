@@ -8,7 +8,7 @@ import Layout  from '../components/layout/layout';
 import spacing from '../styles/spacing.module.css';
 import Article from '../components/article/article';
 import TagsList from '../components/tags-list/tags-list';
-//import Resources from '../components/resources'
+import Resources from '../components/resources/resources';
 import ImageModal from '../components/image-modal/image-modal';
 import classes from '../styles/single-post-template.module.css';
 import ImageAuthor from '../components/image-author/image-author';
@@ -45,6 +45,7 @@ export default ({data}) => {
 						<MDXRenderer frontmatter={data.mdx.frontmatter}>{data.mdx.body}</MDXRenderer>
 					</MDXProvider>
 				</section>
+				<Resources resources={resources} />
 			</Article>
 		</Layout>
 		</>

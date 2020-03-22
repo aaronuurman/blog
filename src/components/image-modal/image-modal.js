@@ -22,10 +22,10 @@ const ImageModal = ({ url, text}) => {
 					className={classes.img_modal_content_open}
 				>
 					<span className={classes.close} onClick={toggleModalState}>Close Modal</span>
-					<img src={url} alt={text} class="my-1"/>
+					<img src={url} alt={text} className="my-1"/>
 				</ReactModal> : 
 				<span onClick={toggleModalState}>
-					<img src={url} alt={text} class="my-1"/>
+					<img src={url} alt={text} className="my-1"/>
 				</span>
 			}
 		</div>
