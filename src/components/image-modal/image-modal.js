@@ -32,4 +32,9 @@ const ImageModal = ({ url, text}) => {
 	)
 }
 
+ImageModal.propTypes = {
+  url: PropTypes.string,
+  text: PropTypes.string
+}
+
 export default ImageModal;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classes from './code.module.css';
 import CopyCode from '../copy-code/copy-code';
 import spacing from '../../styles/spacing.module.css';
@@ -37,5 +38,10 @@ const Code = ({ codeString, language }) => {
     </Highlight>
   );
 };
+
+CopyCode.propTypes = {
+  codeString: PropTypes.object,
+  language: PropTypes.string
+}
 
 export default Code;

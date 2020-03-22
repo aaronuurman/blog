@@ -14,7 +14,7 @@ const PostOverviewFooter = ({ date, timeToRead }) => {
 };
 
 PostOverviewFooter.propTypes = {
-	date: PropTypes.instanceOf(Date),
+	date: PropTypes.string,
 	timeToRead: PropTypes.number
 }
 
