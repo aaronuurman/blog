@@ -5,6 +5,10 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
+.code_wrapper {
+  position: relative;
+}
+
 .code .token-line {
 	line-height: 1.3em;
 	height: 1.3em;
