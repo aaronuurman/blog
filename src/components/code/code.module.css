@@ -1,0 +1,18 @@
+.code {
+	text-align: left;
+  overflow-x: auto;
+  border-radius: 3px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.code .token-line {
+	line-height: 1.3em;
+	height: 1.3em;
+}
+
+.line_nr {
+  display: inline-block;
+  width: 2em;
+  user-select: none;
+  opacity: 0.3;
+}

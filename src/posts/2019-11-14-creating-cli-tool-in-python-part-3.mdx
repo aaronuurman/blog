@@ -65,7 +65,7 @@ To start an application user will have to type on the command line following com
 ```bash
 assistant blog --title "Title of the blog" --image "https://unsplash.com/photos/9FvZfRKKfH8"
 ```
-<img src="https://i.imgur.com/39Uy4AR.gif" alt="Demonstration of a CLI tool" class="my-1"/>
+<ImageModal url="https://i.imgur.com/39Uy4AR.gif" text="Demonstration of a CLI tool" />
 
 As seen on the gif above, the project starts to look like a real tool.
 The main change is that now application uses click option's - in my opinion, this makes interaction with a tool more human-readable.<br />
@@ -129,7 +129,7 @@ def cli(config, verbose):
  config.verbose = verbose
 ```
 
-Blog command business logic is now moved under a blog_command module.
+Blog command business l<ImageModal url="https://i.imgur.com/39Uy4AR.gif" text="Demonstration of a CLI tool" />ogic is now moved under a blog_command module.
 But another thing to notice is that I have created two additional parameters - image and project-path.<br />
 The project-path is optional, but if not provided a current CLI location is used. For that, I have imported an os module and use the getcwd() method.
 
