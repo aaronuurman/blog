@@ -6,9 +6,17 @@
 	padding-bottom: 1em;
 }
 
+.p_b_2 {
+	padding-bottom: 2em;
+}
+
 .p_y_2 {
 	padding-top: 2em;
 	padding-bottom: 2em;
+}
+
+.p_t_2 {
+	padding-top: 2em;
 }
 
 .p_x_08 {

@@ -9,9 +9,9 @@ const Resources = ({ resources }) => {
 	}
 
 	return (
-		<details className={[classes.resources, spacing.m_y_2].join(' ')}>
+		<details className={[classes.resources, spacing.p_y_2].join(' ')}>
 			<summary>Available resources</summary>
-			<ul className={[spacing.p_y_2, spacing.p_x_1].join(' ')}>
+			<ul className={[spacing.p_t_2, spacing.p_x_1].join(' ')}>
 				{resources.map((resource) => (
 					<li className={spacing.p_b_1} key={resource[1]}>
 						<a href={resource[0]} target="blank">{resource[1]}</a>

@@ -23,8 +23,6 @@ export default ({data}) => {
 		tags 
 	} = data.mdx.frontmatter;
 
-	const { slug } = data.mdx.fields.slug;
-
 	const shortcodes = { ImageModal };
 
 	return (
@@ -72,9 +70,6 @@ export const query = graphql`
 			}
 			imageAuthor
 			imageProvider
-		 }
-		 fields {
-			slug
 		 }
 	 }
  }

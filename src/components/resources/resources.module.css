@@ -1,6 +1,6 @@
 .resources summary {
 	cursor: pointer;
-	font-size: var(--h4-desktop);
+	font-size: var(--h4-mobile);
 	color: var(--dark-gray);
 	outline: none;
 }
@@ -21,6 +21,6 @@
 
 @media (min-width : 768px) {
 	.resources summary {
-		font-size: var(--h4-mobile);
+		font-size: var(--h4-desktop);
 	}
 }
