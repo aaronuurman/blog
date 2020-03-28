@@ -17,22 +17,10 @@ body {
   min-height: 100vh;
 }
 
-.btn-submit {
-  font-size: 1em;
-  width: 30%;
-  margin: 1em auto;
-  border: 0 none;
-  border-radius: 4px;
-  background: rgb(39, 174, 96);
-  cursor: pointer;
-  color: var(--white);
-}
-
-.btn-submit :hover {
-	background: rgb(32, 138, 76);
-	transition: all var(--animations-speed) ease;
-}
-
 .img-50 {
   width: 70%;
+}
+
+form {
+	text-align: center;
 }
