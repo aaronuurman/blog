@@ -5,10 +5,12 @@ import Articles from '../components/articles/articles';
 import PostOverview from '../components/post-overview/post-overview';
 
 export default ({data}) => {
+	let title = "Latest blog posts";
+
 	return (
 		<>
 		<Layout>
-			<SEO title="Latest blog posts" />
+			<SEO title={title}/>
 			<Articles>
 				{data.allMdx.nodes.map(({ 
 						id, 

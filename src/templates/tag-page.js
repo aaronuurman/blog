@@ -1,18 +1,21 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-//import SEO from '../components/seo'
-import Layout from '../components/layout/layout'
-import PostOverview from '../components/post-overview/post-overview'
+import React from 'react';
+import { graphql } from 'gatsby';
+import SEO from '../components/seo/seo';
+import Layout from '../components/layout/layout';
+import Articles from '../components/articles/articles';
+import PostOverview from '../components/post-overview/post-overview';
 
 const tagPage = ({ data, pageContext }) => {
-  const { tag } = pageContext
-  const { totalCount } = data.allMdx
-  const pageTitle = `Post${(totalCount === 1) ? '' : 's'} tagged with "${tag}"`
+  const { tag } = pageContext;
+  const { totalCount } = data.allMdx;
+  const title = `Post${(totalCount === 1) ? '' : 's'} tagged with "${tag}"`;
 
   return (
-    <Layout pageTitle={pageTitle}>
-      <h1 className="pb-1">{pageTitle}</h1>
-      <div className="articles">
+    <Layout pageTitle={title}>
+      <SEO title={title}/>
+      <h1>{title}</h1>
+
+      <Articles>
         {data.allMdx.edges.map(({ node }) => (
           <PostOverview
             key={node.id}
@@ -25,7 +28,7 @@ const tagPage = ({ data, pageContext }) => {
             timeToRead={node.timeToRead}
           />
         ))}
-      </div>
+      </Articles>
     </Layout>
   )
 }
@@ -64,4 +67,4 @@ export const tagQuery = graphql`
   }
 `
 
-export default tagPage
+export default tagPage;
