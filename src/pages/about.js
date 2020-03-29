@@ -6,7 +6,6 @@ import Layout from '../components/layout/layout';
 import spacing from '../styles/spacing.module.css';
 
 const AboutPage = ({ data }) => {
-	console.log(data)
 	return (
 		<Layout>
 			<SEO title="About Me" />

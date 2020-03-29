@@ -1,4 +1,3 @@
-const _ = require('lodash')
 const path = require(`path`);
 const { slugify } = require('./src/utils/slugify');
 
@@ -31,8 +30,10 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
 		const posts = result.data.allMdx.nodes;
+		let tags = [];
 		// create page for each mdx file
 		posts.forEach(post => {
+			tags = tags.concat(post.frontmatter.tags)
 			createPage({
 				path: post.fields.slug,
 				component: templates.singlePost,
@@ -42,21 +43,14 @@ exports.createPages = ({ actions, graphql }) => {
 			});
 		});
 
-		// Get all tags
-		let tags = []
-		_.each(posts, edge => {
-			if (_.get(edge, 'node.frontmatter.tags')) {
-				tags = tags.concat(edge.node.frontmatter.tags)
-			}
-		});
-
 		// Count each unique tag
 		let tagPostCounts = {}
 		tags.forEach(tag => {
 			tagPostCounts[tag] = (tagPostCounts[tag] || 0) + 1;
 		});
 
-		tags = _.uniq(tags)
+		//Unique
+		tags = tags.filter((v, i, a) => a.indexOf(v) === i);
 
 		// Create tags page
 		createPage({
