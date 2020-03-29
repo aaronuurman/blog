@@ -3,6 +3,7 @@ import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import SEO from '../components/seo/seo';
 import { MDXProvider } from '@mdx-js/react';
+import { DiscussionEmbed } from 'disqus-react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout  from '../components/layout/layout';
 import spacing from '../styles/spacing.module.css';
@@ -23,7 +24,14 @@ export default ({data}) => {
 		tags 
 	} = data.mdx.frontmatter;
 
+	const { slug } = data.mdx.fields.slug;
+
 	const shortcodes = { ImageModal };
+
+	const disqusConfig = {
+		shortname: process.env.GATSBY_DISQUS_NAME,
+		config: { identifier: slug, title },
+	}
 
 	return (
 		<>
@@ -44,6 +52,7 @@ export default ({data}) => {
 					</MDXProvider>
 				</section>
 				<Resources resources={resources} />
+				<DiscussionEmbed {...disqusConfig} />
 			</Article>
 		</Layout>
 		</>
@@ -70,6 +79,9 @@ export const query = graphql`
 			}
 			imageAuthor
 			imageProvider
+		 }
+		 fields {
+			 slug
 		 }
 	 }
  }
