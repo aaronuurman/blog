@@ -23,6 +23,9 @@ module.exports = {
 			resolve: `gatsby-plugin-mdx`,
 			options: {
 				extensions: [`.mdx`, `.md`],
+				defaultLayouts: {
+          default: require.resolve('./src/templates/mdx-page.js'),
+        },
 				gatsbyRemarkPlugins: [
 					{
 						resolve: 'gatsby-remark-plantuml',
@@ -33,18 +36,16 @@ module.exports = {
 							maxWidth: 980,
 						},
 					},
-				],				
-				plugin: [
 					{
-						resolve: `gatsby-remark-images`,
+						resolve: "gatsby-remark-external-links",
 						options: {
-							maxWidth: 980,
-						},
-					},
+							target: "_blank",
+							rel: "nofollow"
+						}
+					}
 				],
 			},
 		},
-
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -53,12 +54,11 @@ module.exports = {
 			},
 		},
 		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				path: `${__dirname}/src/images`,
-				name: `images`,
-			},
-		}
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/`,
+      },
+    },
 	],
-
 };

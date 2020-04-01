@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classes from './article.module.css';
 
 const Article = ({cssClasses, children }) => (
-	<article className={`${cssClasses.join(', ')}`}>
+	<article className={cssClasses.join(' ')}>
 		{children}
 	</article>
 );

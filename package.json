@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gatsby clean && gatsby build",
     "dev-m": "gatsby clean && gatsby develop -H 0.0.0.0 -p 8000",
-    "dev": "gatsby develop -p 9988 -o",
+    "dev": "gatsby clean && gatsby develop -p 9988 -o",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -21,6 +21,7 @@
     "gatsby-plugin-mdx": "^1.0.80",
     "gatsby-plugin-react-helmet": "^3.1.23",
     "gatsby-plugin-sharp": "^2.4.12",
+    "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^3.1.49",
     "gatsby-remark-plantuml": "^0.5.0",
     "gatsby-source-filesystem": "^2.1.53",
