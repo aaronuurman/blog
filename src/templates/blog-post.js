@@ -10,7 +10,7 @@ import spacing from '../styles/spacing.module.css';
 import Article from '../components/article/article';
 import TagsList from '../components/tags-list/tags-list';
 import Resources from '../components/resources/resources';
-import ImageModal from '../components/image-modal/image-modal';
+import Modal from '../components/modal/modal';
 import classes from '../styles/single-post-template.module.css';
 import ImageAuthor from '../components/image-author/image-author';
 
@@ -26,7 +26,7 @@ export default ({data}) => {
 
 	const { slug } = data.mdx.fields.slug;
 
-	const shortcodes = { ImageModal };
+	const shortcodes = { Modal };
 
 	const disqusConfig = {
 		shortname: process.env.GATSBY_DISQUS_NAME,

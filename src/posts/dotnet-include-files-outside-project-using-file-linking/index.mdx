@@ -1,0 +1,96 @@
+---
+title: How to share files between multiple projects in .Net Core?
+date: 2020-04-25
+image: ./dotnet-include-files-outside-project-using-file-linking.jpg
+imageAuthor: [
+  'Elaine Casap',
+  'https://unsplash.com/@ecasap?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
+]
+imageProvider: [
+  'Unsplash',
+  'https://unsplash.com/s/photos/sharing?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
+]
+tags:
+- .net core
+- c sharp
+resources: [
+  ['https://docs.microsoft.com/en-us/visualstudio/msbuild/common-msbuild-project-items?view=vs-2015&redirectedfrom=MSDN#content', 'MS documentation about Content element'],
+]
+published: true
+---
+
+This post is about a small tip I discovered when I created a project with unit and integration tests.
+In that project, I used some files to test a service functionality,
+so I had to come up with a solution on how to share files between multiple projects.
+
+## The need
+
+This is a structure I'm trying to achieve in my current project.
+
+<Modal>
+
+```plantuml
+@startuml
+skinparam DefaultTextAlignment center
+skinparam WrapWidth 120
+skinparam Shadowing false
+skinparam BackgroundColor White
+skinparam RectangleBorderThickness 0.5
+skinparam ActivityBorderThickness 0.5
+skinparam ActivityArrowFontSize 11
+skinparam AgentBorderThickness 0.5
+skinparam ArrowThickness 0.5
+skinparam ArrowFontStyle Plain
+skinparam NoteBorderThickness 0.5
+skinparam ClassBorderThickness 0.5
+left to right direction
+
+folder "Project solution" {
+  folder "UnitTests" {
+    folder "Resources" as UnitResources {
+      file "somefile.jpg" as unitfile1
+      file "someotherfile.jpg" as unitfile2
+    }
+  }
+
+  folder "IntregrationTests" {
+    folder "Resources" as IntResources {
+      file "somefile.jpg" as intfile1
+      file "someotherfile.jpg" as intfile2
+    }
+  }
+
+  folder "Shared" {
+    folder "TestResources" as Resources {
+      file "somefile.jpg" as file1
+      file "someotherfile.jpg" as file2
+    }
+  }
+}
+
+Resources -UP-> UnitResources : linked
+Resources --> IntResources : linked
+
+@enduml
+```
+
+</Modal>
+
+## Solution
+
+I ended up updating **.csproj** file directly by adding the following line.
+
+```xml
+<ItemGroup>
+  <Content Include="..\Shared\TestResources\**\*" Link="Resources\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="Always" />
+</ItemGroup>
+```
+
+Here I'm using **Content** element to link files to project and publish them with the application.
+All files in the shared folder are linked to the project **Resources** directory.
+
+## Summary
+File linking comes handy when there is a need to share content between multiple projects.
+The result is much cleaner a well-structured project.
+Also later when there is a need for file update then this can be done in a single place and all
+linked content will also be updated.

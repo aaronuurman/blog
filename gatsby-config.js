@@ -28,7 +28,7 @@ module.exports = {
         },
 				gatsbyRemarkPlugins: [
 					{
-						resolve: 'gatsby-remark-plantuml',
+						resolve: 'gatsby-remark-plantuml'
 					},
 					{
 						resolve: `gatsby-remark-images`,

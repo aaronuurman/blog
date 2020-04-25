@@ -1,13 +1,13 @@
-.img_modal {
+.modal {
 	padding-top: 1em;
 	padding-bottom: 1em;
 }
 
-.img_modal span {
+.modal span {
 	cursor: pointer;
 }
 
-.img_modal_overlay_open {
+.modal_overlay_open {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -17,7 +17,7 @@
 	z-index: 99;
 }
 
-.img_modal_content_open {
+.modal_content_open {
 	position: absolute;
 	display: flex;
 	justify-content: center;
@@ -34,7 +34,7 @@
 	overflow: hidden;
 }
 
-.img_modal_content_open img {
+.modal_content_open img {
 	width: auto;
 	max-height: 100%;
 }

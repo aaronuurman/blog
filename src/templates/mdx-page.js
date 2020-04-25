@@ -4,9 +4,9 @@ import { MDXProvider } from "@mdx-js/react";
 import Layout from '../components/layout/layout';
 import spacing from '../styles/spacing.module.css';
 import Article from '../components/article/article';
-import ImageModal from '../components/image-modal/image-modal';
+import Modal from '../components/modal/modal';
 
-const shortcodes = { Link, ImageModal };
+const shortcodes = { Link, Modal };
 
 export default ({ children }) => (
 	<Layout>

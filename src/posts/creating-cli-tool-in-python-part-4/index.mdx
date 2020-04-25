@@ -23,6 +23,9 @@ The current version of assistant contains quite a lot of structural changes, I m
 Blog command got a git task - now if I run the command it also creates a separate branch and makes an initial commit to it with starter file and image included. So that I can easily just jump into my Visual Studio and start writing a new blog post. This same post is also made using an assistant blog command, cool right?<br />
 
 This is a current flow of a blog command:
+
+<Modal>
+
 ```plantuml
 @startuml
 skinparam DefaultTextAlignment center
@@ -63,14 +66,31 @@ end
 @enduml
 ```
 
+</Modal>
+
 When runnind tool on command line it gives now a really good overview what tasks are running and how many left.
-<ImageModal url="https://i.imgur.com/ZqJzeVQ.gif" text="Demonstration of a CLI tool" />
+
+<Modal>
+
+<img src="https://i.imgur.com/ZqJzeVQ.gif" alt="Demonstration of a CLI tool" className="my-1"/>
+
+</Modal>
 
 After running this command I can see new branch:
-<ImageModal url="https://i.imgur.com/itlBHLh.png" text="Branch created example" />
+
+<Modal>
+
+<img src="https://i.imgur.com/itlBHLh.png" alt="Branch created example" className="my-1"/>
+
+</Modal>
 
 And I can see a initial commit for a new post:
-<ImageModal url="https://i.imgur.com/eTKKVTr.png" text="Initial commit example" />
+
+<Modal>
+
+<img src="https://i.imgur.com/eTKKVTr.png" alt="Initial commit example" className="my-1"/>
+
+</Modal>
 
 ### Project structure
 
