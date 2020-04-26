@@ -60,6 +60,14 @@
 	background-color: rgb(255, 191, 28);
 }
 
+.dotnetcore {
+	background-color: rgb(176,190,197);
+}
+
+.csharp {
+	background-color: rgb(206,147,216);
+}
+
 @media (min-width : 768px) {
 	.container .tags {
 		grid-template-columns: repeat(2, 1fr);
