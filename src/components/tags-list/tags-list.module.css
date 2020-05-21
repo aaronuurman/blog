@@ -68,6 +68,14 @@
 	background-color: rgb(206,147,216);
 }
 
+.linux {
+	background-color: rgb(255, 202, 40);
+}
+
+.cli {
+	background-color: rgb(158, 158, 158);
+}
+
 @media (min-width : 768px) {
 	.container .tags {
 		grid-template-columns: repeat(2, 1fr);
