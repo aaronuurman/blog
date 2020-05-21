@@ -22,7 +22,7 @@ published: true
 ---
 
 This post will show how to create a bootable Linux USB flash drive from the terminal and using just a `dd` command.
-For it's required that you have downloaded an ISO of your choice, I'm going to use Fedora Workstation 32 ISO as an example.
+It's required that you have downloaded an ISO of your choice, I'm going to use Fedora Workstation 32 ISO as an example.
 In my case it is required to have a Linux machine (20GB disk) and at least 2GB USB flash drive.
 Depending on distro it can be different.
 I prefer this method because it's easy and I don't need to install any additional software for that.
@@ -52,7 +52,7 @@ nvme0n1                         259:0    0 232.9G  0 disk
 ```
 
 In that case USB flash drive is `dev/sda`, it can be different in your system.
-In identifying the correct drive I usually check the size of the drive. This has been a good enough identifier.
+To identify the correct drive I usually check the size of the drive. This has been a good enough identifier.
 
 3. Unmount USB flash drive.
 For that I'm going to use `unmount` command.
