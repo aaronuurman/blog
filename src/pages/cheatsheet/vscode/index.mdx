@@ -1,0 +1,19 @@
+# Visual Studio Code
+
+## Generate installed extensions list
+
+Copy and paste outcome to somewhere safe for backup.
+
+```bash
+code --list-extensions | xargs -L 1 echo code --install-extension
+```
+
+## Make sure terminal opens always right
+
+Add to settings.
+
+```bash
+"workbench.panel.defaultLocation": "right"
+```
+
+<Link to="cheatsheet">Back to Cheatsheet</Link>
