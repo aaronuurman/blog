@@ -26,11 +26,11 @@ const tagsPage = ({ pageContext }) => {
 
 	return (
 		<Layout pageTitle={title}>
-			<SEO title={title} keywords={searchKeyWords} />
+			<SEO title={title} keywords={searchKeyWords}/>
 			<h1>{title}</h1>
 			<div className={[classes.tags, classes.wrapper].join(' ')}>
 				{tags.sort().map(tag => (
-					<Link to={`/tag/${slugify(tag)}`}>
+					<Link key={slugify(tag)} to={`/tag/${slugify(tag)}`}>
 						<div key={tag} className={getTagClasses(tag)}>
 							{tag}({tagPostCounts[tag]})
 						</div>

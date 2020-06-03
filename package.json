@@ -18,20 +18,20 @@
     "disqus-react": "^1.0.8",
     "gatsby": "^2.19.39",
     "gatsby-image": "^2.2.43",
+    "gatsby-plugin-manifest": "^2.4.10",
     "gatsby-plugin-mdx": "^1.0.80",
     "gatsby-plugin-react-helmet": "^3.1.23",
     "gatsby-plugin-sharp": "^2.4.12",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^3.1.49",
-    "gatsby-remark-plantuml": "^0.5.0",
+    "gatsby-remark-plantuml": "^0.6.0",
     "gatsby-source-filesystem": "^2.1.53",
     "gatsby-transformer-sharp": "^2.3.18",
     "prism-react-renderer": "^1.0.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-helmet": "^5.2.1",
+    "react-helmet": "^6.0.0",
     "react-live": "^2.2.2",
-    "react-modal": "^3.11.2",
-    "react-seo-component": "^1.0.0"
+    "react-modal": "^3.11.2"
   }
 }
