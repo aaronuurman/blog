@@ -7172,10 +7172,10 @@ gatsby-remark-images@^3.1.49:
     unist-util-select "^1.5.0"
     unist-util-visit-parents "^2.1.2"
 
-gatsby-remark-plantuml@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-plantuml/-/gatsby-remark-plantuml-0.5.0.tgz#940218bec34325a54f0de145c1804900786093f5"
-  integrity sha512-+V2OO59eTIMHG1ssHdB3yCQuf/AObjBvRx/BUCdZl+/U+lJTdkal2nRdYJzoQAYLwNjiGzKDbYfYzA8/NTO4mQ==
+gatsby-remark-plantuml@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-plantuml/-/gatsby-remark-plantuml-0.6.0.tgz#0c9065e7552e9c82135ab3299ef45b5b753d15ce"
+  integrity sha512-WfCqVlEg0nN/6iGdWSBc+m0Z3hNeZVUVPkov3emC9nvzt7bFdIsr5tm48VegomkY9f0i4lu4+EKOzPjqG/T42A==
   dependencies:
     "@babel/runtime" "^7.6.0"
     "@rauschma/stringio" "^1.4.0"
