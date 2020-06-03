@@ -12,6 +12,8 @@ module.exports = {
 		navbar: [
 			`tags`,
 			`about`,
+			`uses`,
+			`cheatsheets`,
 			`contact`
 		]
 	},
@@ -58,6 +60,46 @@ module.exports = {
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages/`,
+      },
+		},
+		{
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Aaron Uurman`,
+				short_name: `Aaron Uurman`,
+				description: `Software developer, blogger`,
+        start_url: `/`,
+        background_color: `#0b56a5`,
+        theme_color: `#0b56a5`,
+				display: `standalone`,
+				icon: `src/images/icon.png`,
+				icons: [
+					{
+						src: `/favicons/android-chrome-192x192.png`,
+						sizes: `192x192`,
+						type: `image/png`,
+					},
+					{
+						src: `/favicons/android-chrome-512x512.png`,
+						sizes: `512x512`,
+						type: `image/png`,
+					},
+					{
+						src: `/favicons/apple-touch-icon.png`,
+						sizes: `180x180`,
+						type: `image/png`,
+					},
+					{
+						src: `/favicons/favicon-32x32.png`,
+						sizes: `32x32`,
+						type: `image/png`,
+					},
+					{
+						src: `/favicons/favicon-16x16.png`,
+						sizes: `16x16`,
+						type: `image/png`,
+					},
+				],
       },
     },
 	],
