@@ -33,6 +33,7 @@ Namespaces are used to organize code by declaring a scope that contains a set of
 6. Delegate
 
 By default C# namespaces are public and this can’t be modified. In following example I have created namespace name1 and inside that class c1.
+
 ```csharp {numberLines: true}
 namespace name1
 {
@@ -45,6 +46,7 @@ Or better, we can declare at the beginning of the document that we are using nam
 In this namespace we can’t declare class with same name, like this:
 
 Wrong way:
+
 ```csharp {numberLines: true}
 namespace name1
 {
@@ -57,6 +59,7 @@ namespace name1
 The compiler will now tell us that we already have declared class c1 in the current namespace. Now you may think that we can simply rename the new class and yes, that’s true. But imagine that you are not writing code alone. You have a team and another team member has declared this class already. And class name can’t be changed because this name describes it best. The solution is to use the same class name in other namespaces, like this:
 
 Right way:
+
 ```csharp {numberLines: true}
 namespace name1
 {

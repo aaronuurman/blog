@@ -10,9 +10,10 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 52px 1fr auto;
-  grid-template-areas: "header"
-    "content"
-    "footer";
+  grid-template-areas:
+    'header'
+    'content'
+    'footer';
   grid-gap: 10px;
   min-height: 100vh;
 }
@@ -22,5 +23,5 @@ body {
 }
 
 form {
-	text-align: center;
+  text-align: center;
 }

@@ -36,24 +36,24 @@ command, it does all the following in minutes:<br />
 - Creates a virtual machine for you.
 
 - Modifies the physical properties of this virtual machine (e.g., RAM, number of
-	CPUs, etc.).
+  CPUs, etc.).
 
 - Establishes network interfaces so that you can access your virtual machine
-	from your own computer, another device on the same network, or even from
-	another virtual machine.
+  from your own computer, another device on the same network, or even from
+  another virtual machine.
 
 - Sets up shared folders so that you can continue editing files on your own
-	machine and have those modifications mirror over to the guest machine.
+  machine and have those modifications mirror over to the guest machine.
 
 - Boots the virtual machine.
 
 - Sets the hostname of the machine.
 
 - Provisions software on the machine via a shell script or configuration
-	management solution such as Chef, Puppet, or a custom solution.
+  management solution such as Chef, Puppet, or a custom solution.
 
 - Performs host and guest specific tweaking to work around known issues that may
-	arise.
+  arise.
 
 When it’s all done, you have completely sandboxed development environment.<br />
 Due to the shared folder and networking, you can continue development using your
@@ -80,6 +80,7 @@ Vagrant installed on Fedora 25. If you are using another operation system,
 please check out Vagrant website, they have really good documentation.<br />
 
 Add VirtualBox repository and update system.
+
 ```bash
 sudo su -
 cd /etc/yum.repos.d/
@@ -88,6 +89,7 @@ dnf update
 ```
 
 Make sure you are running latest installed kernel version.
+
 ```bash
 rpm -qa kernel |sort -V |tail -n 1
 uname -r
@@ -96,19 +98,22 @@ uname -r
 If you got a kernel update, reboot system.
 
 Install Virtualbox dependencies.
+
 ```bash {numberLines: true}
 dnf install binutils gcc make patch libgomp glibc-headers \
 	glibc-devel kernel-headers kernel-devel dkms
 dnf install VirtualBox-5.1
 ```
 
-Build needed kernel modules. 
+Build needed kernel modules.
+
 ```bash
 /usr/lib/virtualbox/vboxdrv.sh setup
 ```
 
 In order to use VirtualBox, a user must be added to a vboxusers group. This
 group was created automatically during VirtualBox installation process.
+
 ```bash
 usermod -a -G vboxusers USERNAME
 ```
@@ -118,8 +123,10 @@ usermod -a -G vboxusers USERNAME
 ```bash
 sudo dnf install vagrant
 ```
+
 Note that Fedora use libvirt as default provider, so to use Virtualbox instead
 you need to set an environment variable for it.
+
 ```bash
 sudo dnf install -y vagrant vagrant-libvirt libvirt-devel
 ```
@@ -130,12 +137,14 @@ First we gonna need project folder (create one or use existing). Navigate to the
 folder in terminal.<br />
 
 Create inital Vagrantfile.
+
 ```bash
 vagrant init centos/7
 ```
 
 To run Vagrant machine, run following command. This wil install and set up our
 virtual machine with setting that is described in Vagrantfile.
+
 ```bash
 vagrant up --provider virtualbox
 ```
@@ -143,6 +152,7 @@ vagrant up --provider virtualbox
 By default Vagrant shares project folders with quest machine. For better
 overview, I’m gonna create new folder under project folder and move my project
 files there. In Vagrantfile I define new shared folder.
+
 ```bash
 config.vm.synced_folder "./game", "/server/website"
 ```
@@ -150,32 +160,38 @@ config.vm.synced_folder "./game", "/server/website"
 Now, before rebooting virtual machine, if you are using VirtualBox we need to
 install Vagrant plugin to make folder sharing possable between guest virtual
 machine and host machine.
+
 ```bash
 vagrant plugin install vagrant-vbguest
 ```
 
 When installation is completed, we need to reboot virtual machine.
+
 ```bash
 vagrant reload
 ```
 
 To access my project thought webbrowser we gonna need to forward ports and set
 up simple server.
+
 ```bash
 config.vm.network "forwarded_port", guest: 80, host: 8080
 ```
 
 Reboot guest.
+
 ```bash
 vagrant reload
 ```
 
 Now ssh to guest machine and navigate to /vagrant folder.
+
 ```bash
 vagrant ssh
 ```
 
 Now we need to set up python http server.
+
 ```bash
 sudo python -m SimpleHTTPServer 80
 ```

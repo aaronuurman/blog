@@ -20,6 +20,7 @@ combine related variables, functions (methods) and events together. A Class is
 like a blueprint. It describes data and behavior of an object. So how to declare
 a class? Here is three main components – access modifier, class keyword, and
 identifier.
+
 ```csharp {numberLines: true}
 public class Animal
 {
@@ -32,6 +33,7 @@ can be given private, protected, static and no access modifier – depends on ou
 need. When the class has been declared, we can add properties to that and
 describe it’s behavior. So let’s say, the class will have field’s Name, Age, and
 Weight and methods Walk(), Eat(), and Sleep().
+
 ```csharp {numberLines: true}
 public class Animal
 {
@@ -59,22 +61,26 @@ public class Animal
 So now we see, that this class is like a blueprint for our object. They are not
 same – class describes a type of object. To create the object we need to make
 new variable and initialize it, this can be done with the following line.
+
 ```csharp
 Animal Fox = new Animal();
 ```
 
 To make this code shorter, object initialization can be written like so:
+
 ```csharp
 var Fox = new Animal();
 ```
 
 To access the object properties and methods dot notation can be used.
+
 ```csharp
 Fox.Name = "Foxy";
 ```
 
 For better demonstration, I’m going to create a new class called PlayWithAnimal
 and inside this class, I’m going to create a method to give fox name.
+
 ```csharp {numberLines: true}
 public class PlayWithAnimal
 {

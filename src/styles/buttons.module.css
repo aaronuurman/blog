@@ -5,11 +5,11 @@
   border-radius: 4px;
   background: rgb(39, 174, 96);
   cursor: pointer;
-	color: var(--white);
-	text-transform: uppercase;
+  color: var(--white);
+  text-transform: uppercase;
 }
 
 .btn_submit:hover {
-	background: rgb(32, 138, 76);
-	transition: all var(--animations-speed) ease;
+  background: rgb(32, 138, 76);
+  transition: all var(--animations-speed) ease;
 }

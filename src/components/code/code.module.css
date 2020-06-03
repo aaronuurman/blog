@@ -1,5 +1,5 @@
 .code {
-	text-align: left;
+  text-align: left;
   overflow-x: auto;
   border-radius: 3px;
   font-family: 'Courier New', Courier, monospace;
@@ -10,8 +10,8 @@
 }
 
 .code .token-line {
-	line-height: 1.3em;
-	height: 1.3em;
+  line-height: 1.3em;
+  height: 1.3em;
 }
 
 .line_nr {
