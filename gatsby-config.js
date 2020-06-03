@@ -4,6 +4,8 @@ module.exports = {
 		description: `Software developer, blogger`,
 		siteUrl: `https://www.aaronuurman.com`,
 		author: `Aaron Uurman`,
+		twitterUsername: `@aaronuurman`,
+		defaultImage: `src/images/icon.png`,
 		socialMedia:[
 			`https://github.com/aaronuurman`,
 			`https://www.linkedin.com/in/aaronuurman`,
@@ -36,6 +38,7 @@ module.exports = {
 						resolve: `gatsby-remark-images`,
 						options: {
 							maxWidth: 980,
+							linkImagesToOriginal: false,
 						},
 					},
 					{

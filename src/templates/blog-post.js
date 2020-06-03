@@ -1,7 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
-import SEO from '../components/seo/seo';
+import Seo from '../components/seo/seo';
 import { MDXProvider } from '@mdx-js/react';
 import { DiscussionEmbed } from 'disqus-react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -24,9 +24,9 @@ export default ({data}) => {
 		tags 
 	} = data.mdx.frontmatter;
 
-	const { slug } = data.mdx.fields.slug;
+	const { slug } = data.mdx.fields.slug
 
-	const shortcodes = { Modal };
+	const shortcodes = { Modal }
 
 	const disqusConfig = {
 		shortname: process.env.GATSBY_DISQUS_NAME,
@@ -34,9 +34,8 @@ export default ({data}) => {
 	}
 
 	return (
-		<>
 		<Layout>
-			<SEO title={title} />
+			<Seo title={title} image={image.publicURL} article={true}/>
 			<Article cssClasses={[spacing.p_x_08]}>
 				<section>
 					<h1>{title}</h1>
@@ -55,7 +54,6 @@ export default ({data}) => {
 				<DiscussionEmbed {...disqusConfig} />
 			</Article>
 		</Layout>
-		</>
 	);
 };
 
@@ -71,6 +69,7 @@ export const query = graphql`
 			 tags
 			 resources
 			 image {
+				publicURL
 				childImageSharp {
 					fluid(maxWidth: 980){
 						...GatsbyImageSharpFluid
