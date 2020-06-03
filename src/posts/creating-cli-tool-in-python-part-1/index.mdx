@@ -2,36 +2,66 @@
 title: Creating CLI tool in Python - part 1
 date: 2019-10-28
 image: ./cli.jpg
-imageAuthor: ['Lenny Kuhne', 'https://unsplash.com/@lennykuhne?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText']
-imageProvider: ['Unsplash', 'https://unsplash.com/s/photos/command-line?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText']
-tags: 
-- automation
-resources: [
-  ['https://www.youtube.com/watch?v=Izx3-KSuaM8', 'Building Great CLI Experiences in Node - Jeff Dickey, Heroku'],
-  ['https://www.python.org/', 'Python'],
-  ['https://palletsprojects.com/p/click', 'Click package for CLI creation'],
-  ['https://pip.pypa.io/en/stable', 'Python Package Installer'],
-  ['https://pypi.org/project/setuptools/', 'Setuptools'],
-  ['https://github.com/aaronuurman/assistant', 'Github repository for this post series']
-]
+imageAuthor:
+  [
+    'Lenny Kuhne',
+    'https://unsplash.com/@lennykuhne?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+  ]
+imageProvider:
+  [
+    'Unsplash',
+    'https://unsplash.com/s/photos/command-line?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+  ]
+tags:
+  - automation
+resources:
+  [
+    [
+      'https://www.youtube.com/watch?v=Izx3-KSuaM8',
+      'Building Great CLI Experiences in Node - Jeff Dickey, Heroku',
+    ],
+    ['https://www.python.org/', 'Python'],
+    ['https://palletsprojects.com/p/click', 'Click package for CLI creation'],
+    ['https://pip.pypa.io/en/stable', 'Python Package Installer'],
+    ['https://pypi.org/project/setuptools/', 'Setuptools'],
+    [
+      'https://github.com/aaronuurman/assistant',
+      'Github repository for this post series',
+    ],
+  ]
 published: true
 ---
 
 This is the first post of automation series, I will create multiple posts about how to automate tasks using the CLI tool. All the resources and software used are linked under the blog post "Resources available" section. In this post, I'm going to set-up a project for my CLI tool and create a "Hello World!" command.
 
 ### What is a CLI?
+
 Command-line interface (CLI) provides a possibility to interact with the computer using successive lines of text that are invoked through the command-line.
 As a developer I use CLI tools daily, they are simple to use and often fits my need.<br />
 When I did a bit of research about how to build a great CLI experience I discovered a Jeff Dickery presentation <a href="https://www.youtube.com/watch?v=Izx3-KSuaM8" target='blank'>Building Great CLI Experiences in Node</a>. I strongly suggest to check it out.
 
 ### Tooling
-For this project I'm going to use Python as a programming language. When lookin for
-a frameworks for creating a CLI tools in python I discovered a open source package 
- <a href="https://palletsprojects.com/p/click/" target='blank'>Click</a>. I think click provides all I nead for this project.<br />
- To install our tool I'm going to use <a href="https://pip.pypa.io/en/stable/" target='blank'>Python Package Installer a.k.a. pip</a> and package that makes installing easier - <a href="https://pypi.org/project/setuptools/" target='blank'>Setuptools</a>.
- To get these tools installed just follow the documentation on each webpage.
 
- ### Project structure
+For this project I'm going to use Python as a programming language. When lookin for
+a frameworks for creating a CLI tools in python I discovered a open source package
+
+{' '}
+<a href="https://palletsprojects.com/p/click/" target="blank">
+  Click
+</a>. I think click provides all I nead for this project.
+<br />
+To install our tool I'm going to use <a
+  href="https://pip.pypa.io/en/stable/"
+  target="blank">
+  Python Package Installer a.k.a. pip
+</a> and package that makes installing easier - <a
+  href="https://pypi.org/project/setuptools/"
+  target="blank">
+  Setuptools
+</a>
+. To get these tools installed just follow the documentation on each webpage.
+
+### Project structure
 
 ```bash
 assistant/
@@ -42,6 +72,7 @@ assistant/
 ```
 
 ### assistant.py
+
 This file is an entry point to the CLI tool.
 
 ```python
@@ -50,8 +81,10 @@ def cli():
 ```
 
 ### setup.py
+
 This is a setup file needed for setuptool to make this project installable.
 In this file, I defined a package name, version, the python modules that should be installed, dependencies that setuptool needs to install and entry points.
+
 ```python
 from setuptools import setup
 
@@ -70,12 +103,15 @@ setup(
 ```
 
 ### install-dev.sh
+
 This file will contain a script to install an editable package for development.
 The script will use a Python Package Installer to install this tool for the current user.
 
 ### Installing and running
+
 This is all I need to get this project print "Hello World!", now try to run it.<br />
 First let's install the project as CLI tool using the following command in the project directory.
+
 ```bash
 bash install-dev.sh
 
@@ -85,13 +121,16 @@ or
 ```
 
 To check if a package got installed following command can be used:
+
 ```bash
 pip3 list
 ```
+
 And the output should contain 'Assistant-Cli'.<br />
-To run the project simply type ```assistant``` and this will print "Hello World!".
+To run the project simply type `assistant` and this will print "Hello World!".
 
 ### Summary
+
 In this post, I created an initial project structure, defined a setup.py file for package installer and made the CLI tool to print "Hello World!".<br />
 In the next post, I will define basic business logic for assistant and write a first part of the logic - definening a first command and doing some validation for arguments.<br />
 This project code is available in <a href="https://github.com/aaronuurman/assistant" target='blank'>Github</a>.

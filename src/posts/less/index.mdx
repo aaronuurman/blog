@@ -54,6 +54,7 @@ https://lesscss.org.
 
 Less allows a developer to define a variable, so it could be used in many
 places. To define the variable, use @ symbol and a colon.
+
 ```less
 @light-green: #a5d6a7;
 ```
@@ -63,24 +64,26 @@ places. To define the variable, use @ symbol and a colon.
 This is my favorite part, with less you can organize code with nesting. It
 allows you to make CSS more module. The syntax is familiar to programmers, it's
 almost like creating classes.
+
 ```less {numberLines: true}
-header{
-	h2{
-		font-size: 20px;
-		color: @light-green;
-	}
+header {
+  h2 {
+    font-size: 20px;
+    color: @light-green;
+  }
 }
 ```
 
 Less provides also a way to nest directives.
+
 ```less {numberLines: true}
-.wrapper{
-	@media screen{
-		color: dodgerblue;
-	}
-	@media (min-width: 1024px){
-		color: lightseagreen;
-	}
+.wrapper {
+  @media screen {
+    color: dodgerblue;
+  }
+  @media (min-width: 1024px) {
+    color: lightseagreen;
+  }
 }
 ```
 
@@ -88,58 +91,59 @@ Less provides also a way to nest directives.
 
 Mixins are a group of properties, that allows you to use another class
 properties. They are like functions in a programming language.
+
 ```less {numberLines: true}
-.notification{
-	p{
-		color: #fff;
-	}
+.notification {
+  p {
+    color: #fff;
+  }
 
-	text-align: center;
-	border: 2px solid @border-color;
-	background: @notifications-bg;
-	margin: 10px;
-	width: 30%;
+  text-align: center;
+  border: 2px solid @border-color;
+  background: @notifications-bg;
+  margin: 10px;
+  width: 30%;
 }
 
-.notification-sm{
-	.notification;
-	font-size: 20px;
-	padding: 10px;
+.notification-sm {
+  .notification;
+  font-size: 20px;
+  padding: 10px;
 }
 
-.notification-md{
-	.notification;
-	font-size: 30px;
-	padding: 20px;
+.notification-md {
+  .notification;
+  font-size: 30px;
+  padding: 20px;
 }
 ```
 
 ### Operations
 
 Here is an example of simple operation.
+
 ```less {numberLines: true}
-@btn-text: #FFF;
+@btn-text: #fff;
 @btn-padding: 50px;
 @btn-with: 120px;
 
-.btn{
-	background: @btn-bg;
-	color: @btn-text;
-	padding: @btn-padding;
-	width: @btn-with;
-	text-align: center;
+.btn {
+  background: @btn-bg;
+  color: @btn-text;
+  padding: @btn-padding;
+  width: @btn-with;
+  text-align: center;
 }
 
-.btn-sm{
-	.btn;
-	padding: @btn-padding - 35;
+.btn-sm {
+  .btn;
+  padding: @btn-padding - 35;
 }
 
-.btn-lg{
-	.btn;
-	padding: @btn-padding + 10;
-	background: @btn-bg *2;
-
+.btn-lg {
+  .btn;
+  padding: @btn-padding + 10;
+  background: @btn-bg * 2;
 }
 ```
 

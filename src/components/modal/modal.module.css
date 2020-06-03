@@ -1,42 +1,42 @@
 .modal {
-	padding-top: 1em;
-	padding-bottom: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .modal span {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .modal_overlay_open {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color:rgba(24, 24, 24, 0.96);
-	z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(24, 24, 24, 0.96);
+  z-index: 99;
 }
 
 .modal_content_open {
-	position: absolute;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	border: none;
-	background: none;
-	border-radius: none;
-	outline: none;
-	padding: 2em;
-	overflow: hidden;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: none;
+  background: none;
+  border-radius: none;
+  outline: none;
+  padding: 2em;
+  overflow: hidden;
 }
 
 .modal_content_open img {
-	width: auto;
-	max-height: 100%;
+  width: auto;
+  max-height: 100%;
 }
 
 .close {
@@ -44,31 +44,31 @@
   right: 48px;
   top: 32px;
   width: 24px;
-	height: 24px;
-	cursor: pointer;
-	opacity: 0.8;
+  height: 24px;
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 .close:hover {
   opacity: 1;
 }
 
-.close:before, 
+.close:before,
 .close:after {
-	position: absolute;
-	right: 0;
-	top: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
   content: ' ';
   height: 24px;
   width: 2px;
-	background-color: var(--white);
-	transition: all var(--animations-speed) ease;
+  background-color: var(--white);
+  transition: all var(--animations-speed) ease;
 }
 
 .close:before {
-	transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .close:after {
-	transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }

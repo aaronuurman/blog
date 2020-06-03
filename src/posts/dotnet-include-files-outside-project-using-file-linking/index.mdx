@@ -2,20 +2,26 @@
 title: How to share files between multiple projects in .Net Core?
 date: 2020-04-25
 image: ./dotnet-include-files-outside-project-using-file-linking.jpg
-imageAuthor: [
-  'Elaine Casap',
-  'https://unsplash.com/@ecasap?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
-]
-imageProvider: [
-  'Unsplash',
-  'https://unsplash.com/s/photos/sharing?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
-]
+imageAuthor:
+  [
+    'Elaine Casap',
+    'https://unsplash.com/@ecasap?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+  ]
+imageProvider:
+  [
+    'Unsplash',
+    'https://unsplash.com/s/photos/sharing?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+  ]
 tags:
-- dotnetcore
-- csharp
-resources: [
-  ['https://docs.microsoft.com/en-us/visualstudio/msbuild/common-msbuild-project-items?view=vs-2015&redirectedfrom=MSDN#content', 'MS documentation about Content element'],
-]
+  - dotnetcore
+  - csharp
+resources:
+  [
+    [
+      'https://docs.microsoft.com/en-us/visualstudio/msbuild/common-msbuild-project-items?view=vs-2015&redirectedfrom=MSDN#content',
+      'MS documentation about Content element',
+    ],
+  ]
 published: true
 ---
 
@@ -90,6 +96,7 @@ Here I'm using **Content** element to link files to project and publish them wit
 All files in the shared folder are linked to the project **Resources** directory.
 
 ## Summary
+
 File linking comes handy when there is a need to share content between multiple projects.
 The result is much cleaner a well-structured project.
 Also later when there is a need for file update then this can be done in a single place and all

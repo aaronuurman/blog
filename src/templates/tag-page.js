@@ -1,22 +1,22 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import SEO from '../components/seo/seo';
-import Layout from '../components/layout/layout';
-import Articles from '../components/articles/articles';
-import PostOverview from '../components/post-overview/post-overview';
+import React from 'react'
+import {graphql} from 'gatsby'
+import SEO from '../components/seo/seo'
+import Layout from '../components/layout/layout'
+import Articles from '../components/articles/articles'
+import PostOverview from '../components/post-overview/post-overview'
 
-const tagPage = ({ data, pageContext }) => {
-  const { tag } = pageContext;
-  const { totalCount } = data.allMdx;
-  const title = `Post${(totalCount === 1) ? '' : 's'} tagged with "${tag}"`;
+const tagPage = ({data, pageContext}) => {
+  const {tag} = pageContext
+  const {totalCount} = data.allMdx
+  const title = `Post${totalCount === 1 ? '' : 's'} tagged with "${tag}"`
 
   return (
     <Layout pageTitle={title}>
-      <SEO title={title}/>
+      <SEO title={title} />
       <h1>{title}</h1>
 
       <Articles>
-        {data.allMdx.edges.map(({ node }) => (
+        {data.allMdx.edges.map(({node}) => (
           <PostOverview
             key={node.id}
             title={node.frontmatter.title}
@@ -34,30 +34,30 @@ const tagPage = ({ data, pageContext }) => {
 }
 
 export const tagQuery = graphql`
-  query($tag: String!){
+  query($tag: String!) {
     allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag]}}}
-    ){
+      sort: {fields: [frontmatter___date], order: DESC}
+      filter: {frontmatter: {tags: {in: [$tag]}}}
+    ) {
       totalCount
       edges {
         node {
           id
-          frontmatter{
+          frontmatter {
             title
             date(fromNow: true, formatString: "DD MMM YYYY")
             tags
             resources
             image {
               childImageSharp {
-                fluid(fit: COVER){
+                fluid(fit: COVER) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
           }
           timeToRead
-          fields{
+          fields {
             slug
           }
           excerpt
@@ -67,4 +67,4 @@ export const tagQuery = graphql`
   }
 `
 
-export default tagPage;
+export default tagPage

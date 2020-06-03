@@ -19,6 +19,7 @@ added some unit tests. I this post I'm going to do some more refactoring, to com
 Probably this will be my last post about this tool, from now on I will extend it if I have some task that can be automated.
 
 ### Overview
+
 The current version of assistant contains quite a lot of structural changes, I moved files from one place to another, refactored a lot of code and added additional tests, all for a better future.<br />
 Blog command got a git task - now if I run the command it also creates a separate branch and makes an initial commit to it with starter file and image included. So that I can easily just jump into my Visual Studio and start writing a new blog post. This same post is also made using an assistant blog command, cool right?<br />
 
@@ -72,7 +73,11 @@ When runnind tool on command line it gives now a really good overview what tasks
 
 <Modal>
 
-<img src="https://i.imgur.com/ZqJzeVQ.gif" alt="Demonstration of a CLI tool" className="my-1"/>
+<img
+  src="https://i.imgur.com/ZqJzeVQ.gif"
+  alt="Demonstration of a CLI tool"
+  className="my-1"
+/>
 
 </Modal>
 
@@ -80,7 +85,11 @@ After running this command I can see new branch:
 
 <Modal>
 
-<img src="https://i.imgur.com/itlBHLh.png" alt="Branch created example" className="my-1"/>
+<img
+  src="https://i.imgur.com/itlBHLh.png"
+  alt="Branch created example"
+  className="my-1"
+/>
 
 </Modal>
 
@@ -88,7 +97,11 @@ And I can see a initial commit for a new post:
 
 <Modal>
 
-<img src="https://i.imgur.com/eTKKVTr.png" alt="Initial commit example" className="my-1"/>
+<img
+  src="https://i.imgur.com/eTKKVTr.png"
+  alt="Initial commit example"
+  className="my-1"
+/>
 
 </Modal>
 
@@ -142,10 +155,12 @@ assistant/
  ├── __init__.py
  └── test_str_helper.py
 ```
+
 Each command will now be separated into their folder and each command will have entry file (for example blog_command.py), data transfer object and tasks.<br />
 I'm just going to point out here changes made in blog command, rest is the same and can be found in GitHub (link under resources).
 
 #### blog_command.py
+
 ```python
 from assistant.common import logger
 from assistant.commands.blog.tasks.download_img import DownloadImg
@@ -176,7 +191,7 @@ def handle(config, title, img_url, project_path):
 
 		for task in tasks:
 			logger.info(config.verbose, task.start_message)
-			
+
 			# RequestImageData returns multiple result and image object.
 			# Image object is later used for creating a template.
 			if (type(task).__name__ == 'RequestImageData'):
@@ -196,9 +211,11 @@ def handle(config, title, img_url, project_path):
 		logger.error(format(ex))
 
 ```
+
 When comparing blog command with the previous postcode, then it's now more readable.
 Each task is now a separate class and is registered to a task list. This helps me to count all processes and give numeric feedback to the user how many tasks are done and how many to go.<br />
-Each task is then called using ```execute()``` method.
+Each task is then called using `execute()` method.
 
 ### Summary
+
 In conclusion, this was a really fun and useful project. I learned quite a lot about Python and unit testing. I would that now the main structure for this tool is created it should be quite easy to add new commands. So now I need to just come up with an idea what to automate :)

@@ -22,6 +22,7 @@ In this post, I'm going to create a new argument called image and validate it. T
 The second plan is to do a bit of refactoring and make a CLI tool more user-friendly by switching from arguments to options.
 
 ### Overview
+
 When I started to implement a image option logic I relized that I need to make changes in busines logic and add a project folder option also with a validation. So after this change the whole logic will look as following:
 
 <Modal>
@@ -66,12 +67,18 @@ end
 </Modal>
 
 To start an application user will have to type on the command line following command:
+
 ```bash
 assistant blog --title "Title of the blog" --image "https://unsplash.com/photos/9FvZfRKKfH8"
 ```
+
 <Modal>
 
-<img src="https://i.imgur.com/39Uy4AR.gif" alt="Demonstration of a CLI tool" className="my-1"/>
+<img
+  src="https://i.imgur.com/39Uy4AR.gif"
+  alt="Demonstration of a CLI tool"
+  className="my-1"
+/>
 
 </Modal>
 
@@ -79,7 +86,8 @@ As seen on the gif above, the project starts to look like a real tool.
 The main change is that now application uses click option's - in my opinion, this makes interaction with a tool more human-readable.<br />
 
 ### Project structure
-In structure I have made some minor changes - for better readability, I moved blog command logic into a separate module. I introduced new modules called file_handler and web_scraper. 
+
+In structure I have made some minor changes - for better readability, I moved blog command logic into a separate module. I introduced new modules called file_handler and web_scraper.
 
 ```bash
 assistant/
@@ -99,19 +107,26 @@ assistant/
 ```
 
 #### assistant.py
+
 In a previous post, I implemented a blog command and title argument. At this point passing title using click argument seemed fine but when I added an image argument I realized the interaction with an application did not feel right. So I decided to change it and start using click options.<br />
 Here is an example of command before the change:
+
 ```bash
 assistant blog "Title of the blog" "https://unsplash.com/photos/9FvZfRKKfH8"
 ```
+
 And this is after:
+
 ```bash
 assistant blog --title "Title of the blog" --image "https://unsplash.com/photos/9FvZfRKKfH8"
 ```
+
 The same command can be written in a short version:
+
 ```bash
 assistant blog -t "Title of the blog" -i "https://unsplash.com/photos/9FvZfRKKfH8"
 ```
+
 So let's check what has changed in an assistant.py file.<br />
 On project import lever there are some changes. I have moved a logger and validation module import under the blog_command module and now import this instead. Also, I need a str_helper, to check if a user has passed a project path or not.
 
@@ -252,9 +267,11 @@ def find_sub_folder(parent_path, sub_path):
 ```
 
 #### validator.py
+
 This module now got the update, I added two additional validation methods, one for image and the other for project-path.
 The validate_img method is straight forward, basically, I had to make sure it's not empty if it is an exception is thrown. Then I had to make sure it's a valid URL - for this I used a regex. I did not want to add an Unsplash to regex, because maybe later there will be some other image provider or I will add images from some other place.
 So to support only Unsplash images, for now, I added if check.
+
 ```python
 def validate_img(img):
  """Validate blog image.
@@ -285,7 +302,9 @@ def validate_img(img):
 
  return 'Validation Success: Image "%s" is valid.' % img
 ```
+
 The validate_project_path method just makes sure that project-path parameter is not empty and project folder contains an "images" folder.
+
 ```python
 def validate_project_path(path):
  """Validate project path.
@@ -335,12 +354,13 @@ def download_img(imageUrl, filePath):
  downloadEndPoint = imageUrl + '/download?force=true'
  request.urlretrieve(downloadEndPoint, filePath)
 ```
+
 In get_image_author I have defined a selector class, then making request and storing response in variable to decode it and parse it using BeatifulSoup. The rest is just to select a correct data from response.
 
 ```python
 def get_image_author(imageUrl, file_name):
  """Request image author data from page.
- 
+
  Returns Image object with filled data.
  """
 
@@ -364,6 +384,7 @@ def get_image_author(imageUrl, file_name):
 ```
 
 ### Summary
+
 In this post, I created an additional two options/parameters to blog command - image and project-path. Created an image download logic and added more unit tests. <br />
 In the next post, I'm going to create a blog post starter file and fill it with some initial data.<br />
 Like always, the source code of this post is available in <a href="https://github.com/aaronuurman/assistant" target='blank'>Github</a>.
