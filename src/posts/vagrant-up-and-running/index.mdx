@@ -11,8 +11,8 @@ tags:
 - web tech
 resources: [
 	['https://www.vagrantup.com/docs/', 'Vagrant website'],
-	['http://danilodellaquila.com/en/blog/vagrant-and-virtualbox-installation-on-fedora', 'Vagrant and Virtualbox Installation on Fedora - by D. Dellaquila'],
-	['http://stackoverflow.com/questions/22717428/vagrant-error-failed-to-mount-folders-in-linux-guest', 'Stackoverflow answer for mounting problem']
+	['https://danilodellaquila.com/en/blog/vagrant-and-virtualbox-installation-on-fedora', 'Vagrant and Virtualbox Installation on Fedora - by D. Dellaquila'],
+	['https://stackoverflow.com/questions/22717428/vagrant-error-failed-to-mount-folders-in-linux-guest', 'Stackoverflow answer for mounting problem']
 ]
 published: true
 ---
@@ -83,7 +83,7 @@ Add VirtualBox repository and update system.
 ```bash
 sudo su -
 cd /etc/yum.repos.d/
-wget http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
+wget https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
 dnf update
 ```
 
@@ -182,7 +182,7 @@ sudo python -m SimpleHTTPServer 80
 
 For now, we have vagrant machine up. Inside that we are running server where is
 hosted my tetris game (not ready yet). If I navigate to
-http://localhost:8080/game/, I see my tetris game.
+https://localhost:8080/game/, I see my tetris game.
 
 ## Useful commands
 
