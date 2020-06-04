@@ -1,10 +1,10 @@
 import React from 'react'
 import {Link} from 'gatsby'
 import {MDXProvider} from '@mdx-js/react'
-import Layout from '../components/layout/layout'
+
+import {Layout, Modal, Article} from '../components'
+
 import spacing from '../styles/spacing.module.css'
-import Article from '../components/article/article'
-import Modal from '../components/modal/modal'
 
 const shortcodes = {Link, Modal}
 

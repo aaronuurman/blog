@@ -1,9 +1,7 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import SEO from '../components/seo/seo'
-import Layout from '../components/layout/layout'
-import Articles from '../components/articles/articles'
-import PostOverview from '../components/post-overview/post-overview'
+
+import {Layout, SEO, Articles, PostOverview} from '../components'
 
 const tagPage = ({data, pageContext}) => {
   const {tag} = pageContext
