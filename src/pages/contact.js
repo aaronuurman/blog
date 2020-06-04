@@ -1,7 +1,8 @@
 import React from 'react'
-import SEO from '../components/seo/seo'
+
+import {Layout, SEO} from '../components'
+
 import input from '../styles/input.module.css'
-import Layout from '../components/layout/layout'
 import spacing from '../styles/spacing.module.css'
 import buttons from '../styles/buttons.module.css'
 
@@ -23,9 +24,10 @@ const ContactPage = () => {
         data-netlify="true">
         <div className={input.inputs}>
           <div>
-            <input type="hidden" name="form-name" value="contact" />
-            <input type="hidden" name="bot-field" />
+            <input aria-label="Netlify form name" type="hidden" name="form-name" value="contact" />
+            <input aria-label="Bot field" type="hidden" name="bot-field" />
             <input
+              aria-label="Name input"
               className={inputClasses}
               type="text"
               name="name"
@@ -33,6 +35,7 @@ const ContactPage = () => {
               placeholder="Name"
             />
             <input
+              aria-label="Email address input"
               className={inputClasses}
               type="email"
               name="email"
@@ -40,6 +43,7 @@ const ContactPage = () => {
               placeholder="Email address"
             />
             <input
+              aria-label="Subject input"
               className={inputClasses}
               name="subject"
               id="subject"
@@ -47,6 +51,7 @@ const ContactPage = () => {
             />
           </div>
           <textarea
+            aria-label="Text area input"
             className={inputClasses}
             name="message"
             id="message"

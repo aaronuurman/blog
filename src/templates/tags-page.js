@@ -1,11 +1,12 @@
 import React from 'react'
 import {Link} from 'gatsby'
-import SEO from '../components/seo/seo'
-import {slugify} from '../utils/slugify'
-import {camelize} from '../utils/camelize'
-import Layout from '../components/layout/layout'
+
+import {slugify, camelize} from '../utils'
+
+import {Layout, SEO} from '../components'
+
 import spacing from '../styles/spacing.module.css'
-import classes from '../components/tags-list/tags-list.module.css'
+import classes from '../components/Tags/tags.module.css'
 
 const tagsPage = ({pageContext}) => {
   let {tags, tagPostCounts} = pageContext

@@ -1,18 +1,22 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import {graphql} from 'gatsby'
-import Seo from '../components/seo/seo'
 import {MDXProvider} from '@mdx-js/react'
 import {DiscussionEmbed} from 'disqus-react'
 import {MDXRenderer} from 'gatsby-plugin-mdx'
-import Layout from '../components/layout/layout'
+
+import {
+  SEO,
+  Tags,
+  Modal,
+  Layout,
+  Article,
+  Resources,
+  ImageAuthor,
+} from '../components'
+
 import spacing from '../styles/spacing.module.css'
-import Article from '../components/article/article'
-import TagsList from '../components/tags-list/tags-list'
-import Resources from '../components/resources/resources'
-import Modal from '../components/modal/modal'
 import classes from '../styles/single-post-template.module.css'
-import ImageAuthor from '../components/image-author/image-author'
 
 export default ({data}) => {
   const {
@@ -35,11 +39,11 @@ export default ({data}) => {
 
   return (
     <Layout>
-      <Seo title={title} image={image.publicURL} article={true} />
+      <SEO title={title} image={image.publicURL} article={true} />
       <Article cssClasses={[spacing.p_x_08]}>
         <section>
           <h1>{title}</h1>
-          <TagsList tags={tags} />
+          <Tags tags={tags} />
         </section>
         <section>
           <Img
