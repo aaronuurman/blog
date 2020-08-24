@@ -2,33 +2,18 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.128.0/containers/docker-existing-dockerfile
 {
 	"name": "aaronuurman.com development",
-
-	// Sets the run context to one level up instead of the .devcontainer folder.
 	"context": "..",
-
-	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
 	"dockerFile": "../Dockerfile",
-
-	// Set *default* container specific settings.json values on container create.
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/bash"
 	},
-
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [],
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"extensions": [	
+		"ms-azuretools.vscode-docker", 
+		"yzhang.markdown-all-in-one",
+		"formulahendry.auto-close-tag",
+		"formulahendry.auto-rename-tag",
+		"CoenraadS.bracket-pair-colorizer"
+	],
 	"forwardPorts": [8000,8000],
-
-	// Uncomment the next line to run commands after the container is created - for example installing curl.
 	"postCreateCommand": "yarn install",
-
-	// Uncomment when using a ptrace-based debugger like C++, Go, and Rust
-	// "runArgs": [ "-u", "yarn" ],
-
-	// Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
-	// "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
-
-	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-	// "remoteUser": "vscode"
 }
