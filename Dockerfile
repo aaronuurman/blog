@@ -8,16 +8,12 @@ RUN dnf install -y yarn
 RUN dnf install -y graphviz
 RUN dnf install -y java-latest-openjdk
 RUN dnf install -y git
-RUN yarn --version
-RUN java -version
+RUN yarn add gatsby-cli
 
-WORKDIR /usr/src/app
+WORKDIR /src
+
+COPY package*.json ./
+
+RUN yarn install
 
 COPY . .
-
-RUN yarn global add gatsby-cli
-# RUN yarn install
-
-# EXPOSE 8000
-
-# CMD [ "yarn", "dev-m" ]
