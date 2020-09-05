@@ -37,6 +37,6 @@
     "react-modal": "^3.11.2"
   },
   "devDependencies": {
-    "prettier": "^2.0.5"
+    "prettier": "^2.1.1"
   }
 }
