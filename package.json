@@ -15,7 +15,7 @@
     "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|graphql|md|mdx)\""
   },
   "dependencies": {
-    "@mdx-js/mdx": "^1.6.16",
+    "@mdx-js/mdx": "^1.6.17",
     "@mdx-js/react": "^1.6.16",
     "disqus-react": "^1.0.10",
     "gatsby": "^2.24.57",
