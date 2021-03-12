@@ -1049,10 +1049,10 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.6.0", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
-  version "7.12.5"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
-  integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
+"@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+  version "7.13.10"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.10.tgz#47d42a57b6095f4468da440388fdbad8bebf0d7d"
+  integrity sha512-4QPkjJq6Ns3V/RgpEahRk+AGfL0eO6RHHtTWoNNr5mO49G6B5+X6d6THgWEAvTrznU5xYpbAlVKRYcsCgh/Akw==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -2985,7 +2985,7 @@ bl@^4.0.3:
     inherits "^2.0.4"
     readable-stream "^3.4.0"
 
-bluebird@^3.0.5, bluebird@^3.5.1, bluebird@^3.5.5, bluebird@^3.7.2:
+bluebird@^3.0.5, bluebird@^3.5.5, bluebird@^3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
@@ -6489,16 +6489,17 @@ gatsby-remark-images@^3.11.1:
     unist-util-select "^1.5.0"
     unist-util-visit-parents "^2.1.2"
 
-gatsby-remark-plantuml@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-plantuml/-/gatsby-remark-plantuml-0.6.0.tgz#0c9065e7552e9c82135ab3299ef45b5b753d15ce"
-  integrity sha512-WfCqVlEg0nN/6iGdWSBc+m0Z3hNeZVUVPkov3emC9nvzt7bFdIsr5tm48VegomkY9f0i4lu4+EKOzPjqG/T42A==
+gatsby-remark-plantuml@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-plantuml/-/gatsby-remark-plantuml-0.7.0.tgz#deed3c5977cd8e83bcd1a8e097de8570e777ccb5"
+  integrity sha512-JHYA9RkdFVXuqAwGQLq/FHpFpM7E1BC7+Ia55VWf4F6uyCDdHXdS47cXAvYG/Jo/ZAgrVYWlNDJf/eDedblFHg==
   dependencies:
-    "@babel/runtime" "^7.6.0"
+    "@babel/runtime" "^7.9.2"
     "@rauschma/stringio" "^1.4.0"
-    bluebird "^3.5.1"
+    bluebird "^3.7.2"
+    cheerio "^1.0.0-rc.3"
     hasbin "^1.2.3"
-    unist-util-visit "^1.4.1"
+    unist-util-visit "^2.0.2"
 
 gatsby-source-filesystem@^2.11.1:
   version "2.11.1"
