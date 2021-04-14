@@ -34,7 +34,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-live": "^2.2.3",
-    "react-modal": "^3.12.1"
+    "react-modal": "^3.13.1"
   },
   "devDependencies": {
     "prettier": "^2.2.1"
