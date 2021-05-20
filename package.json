@@ -21,7 +21,7 @@
     "gatsby": "^2.32.11",
     "gatsby-image": "^3.0.0",
     "gatsby-plugin-manifest": "^2.12.1",
-    "gatsby-plugin-mdx": "^1.10.0",
+    "gatsby-plugin-mdx": "^2.5.1",
     "gatsby-plugin-react-helmet": "^3.10.0",
     "gatsby-plugin-sharp": "^2.14.3",
     "gatsby-remark-external-links": "^0.0.4",
