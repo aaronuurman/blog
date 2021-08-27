@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Spectral&display=swap');
+
+body {
+    background: var(--light-gray);
+    scroll-behavior: smooth;
+    font-family: 'Georgia', serif;
+}
+
+#gatsby-focus-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 52px 1fr auto;
+    grid-template-areas:
+        'header'
+        'content'
+        'footer';
+    grid-gap: 10px;
+    min-height: 100vh;
+}
+
+.img-50 {
+    width: 70%;
+}
+
+form {
+    text-align: center;
+}

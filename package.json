@@ -10,15 +10,20 @@
         "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|graphql|md|mdx)\""
     },
     "dependencies": {
+        "gray-matter": "^4.0.3",
+        "marked": "^3.0.2",
         "next": "11.1.0",
         "react": "17.0.2",
         "react-dom": "17.0.2"
     },
     "devDependencies": {
         "@types/react": "17.0.19",
+        "autoprefixer": "latest",
         "eslint": "7.32.0",
         "eslint-config-next": "11.1.0",
+        "postcss": "latest",
         "prettier": "2.3.2",
+        "tailwindcss": "latest",
         "typescript": "4.3.5"
     }
 }
