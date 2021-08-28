@@ -1,4 +1,5 @@
 export * from './Code'
+export * from './Modal'
 export * from './Footer'
 export * from './Header'
 export * from './Layout'
