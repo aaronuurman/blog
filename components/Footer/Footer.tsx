@@ -8,7 +8,7 @@ interface Props {
 
 const Footer = ({ copyright, children }: Props) => {
     return (
-        <footer className={spacing.p_y_2}>
+        <footer className={[classes.footer, spacing.p_y_2].join(' ')}>
             <div className={[classes.container, spacing.p_x_08].join(' ')}>
                 <div>
                     Copyright © {new Date().getFullYear()} {copyright}

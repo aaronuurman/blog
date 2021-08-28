@@ -1,4 +1,4 @@
-footer {
+.footer {
     height: 90px;
     font-size: 14px;
     grid-area: footer;
@@ -7,25 +7,25 @@ footer {
     background: var(--intense-blue);
 }
 
-footer .container div a {
+.footer .container div a {
     color: var(--white);
 }
 
-footer .container {
+.footer .container {
     width: 97vw;
     display: grid;
     margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
 }
 
-footer .container > div {
+.footer .container > div {
     display: flex;
     text-align: left;
     align-items: center;
 }
 
 @media (min-width: 992px) {
-    footer .container {
+    .footer .container {
         max-width: 980px;
     }
 }

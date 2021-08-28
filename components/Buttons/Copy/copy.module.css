@@ -1,0 +1,18 @@
+.btn_copy {
+    border: 0;
+    z-index: 5;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 3px;
+    margin-right: 0.5em;
+    padding: 0.3em 0.5em;
+    color: var(--light-gray);
+    background-color: var(--blue);
+    transition: all var(--animations-speed) ease;
+}
+
+.btn_copy:hover {
+    background-color: var(--intense-blue);
+}

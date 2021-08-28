@@ -5,7 +5,7 @@ import spacing from '../../styles/spacing.module.css'
 
 interface Props {
     links: string[]
-    children: any
+    children?: any
 }
 
 const Navigation = ({ links, children }: Props) => {

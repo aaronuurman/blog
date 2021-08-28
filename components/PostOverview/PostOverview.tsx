@@ -11,10 +11,11 @@ import spacing from '../../styles/spacing.module.css'
 interface Props extends DateType, TimeToReadType, Tags, SlugType, TitleType, OverviewType, ImageType {}
 
 const PostOverview = ({ date, timeToRead, tags, slug, title, overview, image }: Props) => {
+    // Use Next.js image component
     return (
         <Article cssClasses={[classes.postoverview]}>
             <Link href={`/${slug}`}>
-                <ImageType className={classes.cover} src={image} alt={title} />
+                <img className={classes.cover} src={image} alt={title} />
             </Link>
             <section className={[spacing.p_1]}>
                 <Tags tags={tags} />
