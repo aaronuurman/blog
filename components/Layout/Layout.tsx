@@ -1,15 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 
-import {Header} from '../Header'
+import { Header } from '../Header'
 
 interface Props {
     children: any
 }
 
 let title = 'Aaron Uurman'
-
-const Layout = ({children}: Props) => {
+const Layout = ({ children }: Props) => {
     return (
         <>
             <Header siteTitle={title}>

@@ -1,9 +1,9 @@
-import type {AppProps} from 'next/app'
-import {Layout} from '../components'
+import type { AppProps } from 'next/app'
+import { Layout } from '../components'
 
 import '../styles/main.css'
 
-const MyApp = ({Component, pageProps}: AppProps) => {
+const MyApp = ({ Component, pageProps }: AppProps) => {
     return (
         <Layout>
             <Component {...pageProps} />

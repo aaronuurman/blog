@@ -1,11 +1,11 @@
 import React from 'react'
 import Head from 'next/head'
-import {GetStaticPaths, GetStaticProps, GetStaticPropsContext} from 'next'
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 
-import {blogPosts} from '../../lib/data'
-import {BlogPost} from '../../interfaces'
+import { blogPosts } from '../../lib/data'
+import { BlogPost } from '../../interfaces'
 
-const BlogPage = ({title, date, content}: BlogPost) => {
+const BlogPage = ({ title, date, content }: BlogPost) => {
     return (
         <div>
             <Head>
@@ -24,7 +24,7 @@ const BlogPage = ({title, date, content}: BlogPost) => {
 // @ts-ignore
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
     console.log(context)
-    const {params} = context
+    const { params } = context
     return {
         // @ts-ignore
         props: blogPosts.find((post) => post.slug === params.slug),

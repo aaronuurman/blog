@@ -1,6 +1,6 @@
-import type {NextPage} from 'next'
+import type { NextPage } from 'next'
 import Head from 'next/head'
-import {blogPosts} from '../lib/data'
+import { blogPosts } from '../lib/data'
 
 interface Props {
     title?: string
@@ -8,7 +8,7 @@ interface Props {
     content?: string
 }
 
-const BlogPage: NextPage<Props> = ({title, date, content}: Props) => {
+const BlogPage: NextPage<Props> = ({ title, date, content }: Props) => {
     return (
         <div>
             <Head>
