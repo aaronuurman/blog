@@ -1,0 +1,11 @@
+.post_overview_footer {
+    display: grid;
+    font-size: 0.8em;
+    color: var(--medium-gray);
+    text-transform: uppercase;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.post_overview_footer div:last-child {
+    text-align: right;
+}

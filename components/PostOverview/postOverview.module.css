@@ -1,0 +1,38 @@
+.postoverview {
+    display: flex;
+    flex-flow: column;
+}
+
+.postoverview a .cover {
+    height: 200px;
+}
+
+.postoverview section {
+    position: relative;
+    flex: 1;
+}
+
+.postoverview section a {
+    color: var(--dark-gray);
+}
+
+.postoverview:hover {
+    transform: scale(1.03);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 768px) {
+    .postoverview a .cover {
+        height: 260px;
+    }
+
+    .postoverview:nth-child(6n + 4),
+    .postoverview:nth-child(6n + 1) {
+        grid-column-start: span 2;
+    }
+
+    .postoverview:nth-child(6n + 4) a .cover,
+    .postoverview:nth-child(6n + 1) a .cover {
+        height: 360px;
+    }
+}
