@@ -288,6 +288,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prismjs@npm:^1.16.6":
+  version: 1.16.6
+  resolution: "@types/prismjs@npm:1.16.6"
+  checksum: fcb489d19d21292ceffc661fd9c9aa8ba36bcd2835388fa85812aa60cdf14d4720ceb22be7a088aa753c48462e75bcd8191d178a085e4a8b0d3f34471d30d86a
+  languageName: node
+  linkType: hard
+
 "@types/prop-types@npm:*":
   version: 15.7.4
   resolution: "@types/prop-types@npm:15.7.4"
@@ -379,6 +386,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "aaronuurman.com@workspace:."
   dependencies:
+    "@types/prismjs": ^1.16.6
     "@types/react": 17.0.19
     autoprefixer: latest
     eslint: 7.32.0
@@ -387,6 +395,8 @@ __metadata:
     marked: ^3.0.2
     next: 11.1.0
     prettier: 2.3.2
+    prism-react-renderer: ^1.2.1
+    prismjs: ^1.24.1
     react: 17.0.2
     react-dom: 17.0.2
     typescript: 4.3.5
@@ -3680,6 +3690,22 @@ fsevents@~2.3.1:
   bin:
     prettier: bin-prettier.js
   checksum: 17ce5784ac67621c292df58e2da60b2ee150c2d6aebea22a6ad9e52fcd6a5e66c349d0a8436ea3bd8ff9d778920a5f68000d7625b74f43558718a49755aa5259
+  languageName: node
+  linkType: hard
+
+"prism-react-renderer@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "prism-react-renderer@npm:1.2.1"
+  peerDependencies:
+    react: ">=0.14.9"
+  checksum: 66cab3d9f9f18ff5db222df74e1f326262ad093202f855ef2bd9e8001fef21b92f2242a2292caa77c36a517a7f379620417b421eaa320405deb6ecb27c18ee5e
+  languageName: node
+  linkType: hard
+
+"prismjs@npm:^1.24.1":
+  version: 1.24.1
+  resolution: "prismjs@npm:1.24.1"
+  checksum: e5d14a4ba56773122039295bd760c72106acc964e04cb9831b9ae7e7a58f67ccac6c053e77e21f1018a3684f31d35bb065c0c81fd4ff00b73b1570c3ace4aef0
   languageName: node
   linkType: hard
 
