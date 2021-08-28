@@ -1,9 +1,9 @@
-import { DateString, TimeToRead } from '../../interfaces'
+import { DateType, TimeToReadType } from '../../interfaces'
 
 import spacing from '../../styles/spacing.module.css'
 import classes from './postOverviewFooter.module.css'
 
-interface Props extends DateString, TimeToRead {}
+interface Props extends DateType, TimeToReadType {}
 
 const PostOverviewFooter = ({ date, timeToRead }: Props) => {
     const minutesText: string = timeToRead === 1 ? 'minute' : 'minutes'

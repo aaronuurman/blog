@@ -1,13 +1,13 @@
 import Link from 'next/link'
 
-import { Tags } from '../../interfaces'
+import { TagsType } from '../../interfaces'
 import slugify from '../../utils/slugify'
 import camelize from '../../utils/camelize'
 
 import classes from './tags.module.css'
 import spacing from '../../styles/spacing.module.css'
 
-interface Props extends Tags {}
+interface Props extends TagsType {}
 
 const Tags = ({ tags }: Props) => {
     if (tags === undefined || tags.length === 0) {
