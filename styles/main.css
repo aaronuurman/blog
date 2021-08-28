@@ -1,5 +1,5 @@
+@import './base.module.css';
+@import './reset.module.css';
 @import './spacing.module.css';
 @import './variables.module.css';
-@import './reset.module.css';
 @import './typography.module.css';
-@import './base.module.css';
