@@ -1,9 +1,8 @@
 import classes from './article.module.css'
 
-interface Props {
-    cssClasses: string[]
-    children: any
-}
+import { LayoutType, CssClassesType } from '../../interfaces'
+
+interface Props extends LayoutType, CssClassesType {}
 
 const Article = ({ cssClasses, children }: Props) => {
     return <article className={cssClasses.join(' ')}>{children}</article>

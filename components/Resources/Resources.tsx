@@ -1,3 +1,4 @@
+import { ExternalLink } from '../Links'
 import slugify from '../../utils/slugify'
 import { ResourceType, ResourcesType } from '../../interfaces'
 
@@ -14,11 +15,8 @@ const Resources = ({ resources }: ResourcesType) => {
             <summary>Available resources</summary>
             <ul className={[spacing.p_t_2, spacing.p_x_1].join(' ')}>
                 {resources.map((resource: ResourceType) => (
-                    // TODO: Use Next.js Link here.
                     <li className={spacing.p_b_1} key={slugify(resource.name)}>
-                        <a href={resource.url} target="blank">
-                            {resource.name}
-                        </a>
+                        <ExternalLink title={resource.name} url={resource.url} />
                     </li>
                 ))}
             </ul>

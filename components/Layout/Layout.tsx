@@ -4,19 +4,21 @@ import { Container } from '../Container'
 import { Navigation } from '../Navigation'
 import { SocialMedia } from '../SocialMedia'
 
-import spacing from '../../styles/spacing.module.css'
+import { LayoutType } from '../../interfaces/LayoutType'
 
-interface Props {
-    children: any
-}
+import spacing from '../../styles/spacing.module.css'
 
 let title = 'Aaron Uurman'
 let navbar = ['home', 'about']
-let socialMedia = []
-const Layout = ({ children }: Props) => {
+let socialMedia = [
+    'https://twitter.com/aaronuurman',
+    'https://www.linkedin.com/in/aaronuurman',
+    'https://github.com/aaronuurman',
+]
+const Layout = ({ children }: LayoutType) => {
     return (
         <>
-            <Header siteTitle={title}>
+            <Header title={title}>
                 <Navigation links={navbar} />
             </Header>
             <Container cssClasses={[spacing.p_y_2]}>{children}</Container>

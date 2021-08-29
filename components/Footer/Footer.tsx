@@ -1,10 +1,9 @@
+import { CopyrightType, LayoutType } from '../../interfaces'
+
 import classes from './footer.module.css'
 import spacing from '../../styles/spacing.module.css'
 
-interface Props {
-    copyright: string
-    children: any
-}
+interface Props extends LayoutType, CopyrightType {}
 
 const Footer = ({ copyright, children }: Props) => {
     return (

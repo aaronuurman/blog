@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { WebLink } from '../Links'
 
 import classes from './navigation.module.css'
 import spacing from '../../styles/spacing.module.css'
@@ -20,9 +20,7 @@ const Navigation = ({ links, children }: Props) => {
                     {links.map((link: string, index: number) => {
                         return (
                             <li className={[spacing.p_1]} key={index}>
-                                <Link href={`/${link}`}>
-                                    <a>{link}</a>
-                                </Link>
+                                <WebLink title={link} url={`/${link}`} />
                             </li>
                         )
                     })}

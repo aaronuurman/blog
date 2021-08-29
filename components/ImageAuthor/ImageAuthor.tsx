@@ -1,3 +1,5 @@
+import { ExternalLink } from '../Links'
+
 import classes from './imageAuthor.module.css'
 
 interface Props {
@@ -13,24 +15,15 @@ const ImageAuthor = ({ author, provider }: Props) => {
     if ((!author || author.length === 0) && (provider || provider.length !== 0)) {
         return (
             <div className={[classes.imgprovider]}>
-                Photo by:{' '}
-                <a href={provider[1]} target="blank">
-                    {provider[0]}
-                </a>
+                Photo by: <ExternalLink title={provider[1]} url={provider[0]} />
             </div>
         )
     }
 
     return (
         <div className={[classes.imgprovider]}>
-            Photo by:{' '}
-            <a href={author[1]} target="blank">
-                {author[0]}
-            </a>{' '}
-            /{' '}
-            <a href={provider[1]} target="blank">
-                {provider[0]}
-            </a>
+            Photo by: <ExternalLink title={author[1]} url={author[0]} />/
+            <ExternalLink title={provider[1]} url={provider[0]} />
         </div>
     )
 }

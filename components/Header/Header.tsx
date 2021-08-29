@@ -1,22 +1,19 @@
 import React from 'react'
-import Link from 'next/link'
+
+import { WebLink } from '../Links'
+import { LayoutType, TitleType } from '../../interfaces'
 
 import classes from './header.module.css'
 import spacing from '../../styles/spacing.module.css'
 
-interface Props {
-    siteTitle: string
-    children: any
-}
+interface Props extends LayoutType, TitleType {}
 
-const Header = ({ siteTitle, children }: Props) => {
+const Header = ({ title, children }: Props) => {
     return (
         <header className={classes.header}>
             <div className={[classes.container, spacing.p_x_08].join(' ')}>
                 <h2>
-                    <Link href="/">
-                        <a>{siteTitle}</a>
-                    </Link>
+                    <WebLink title={title} url="/" />
                 </h2>
                 {children}
             </div>
