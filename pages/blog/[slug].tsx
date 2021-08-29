@@ -5,7 +5,17 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 import { blogPosts } from '../../lib/data'
 import { BlogPost } from '../../interfaces'
 
-const BlogPage = ({ title, date, content }: BlogPost) => {
+import spacing from '../styles/spacing.module.css'
+import classes from '../styles/single-post-template.module.css'
+
+
+const BlogPage = ({ slug, title, date, content }: BlogPost) => {
+    // TODO: Add some commenting system, disqus or someting like that.
+    const disqusConfig = {
+        shortname: process.env.GATSBY_DISQUS_NAME,
+        config: {identifier: slug, title},
+    }
+
     return (
         <div>
             <Head>
@@ -21,6 +31,7 @@ const BlogPage = ({ title, date, content }: BlogPost) => {
     )
 }
 
+// TODO: Fix these ts-ignores
 // @ts-ignore
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
     console.log(context)

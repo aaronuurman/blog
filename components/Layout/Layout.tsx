@@ -17,7 +17,7 @@ let socialMedia = [
 ]
 const Layout = ({ children }: LayoutType) => {
     return (
-        <>
+        <div className="wrapper">
             <Header title={title}>
                 <Navigation links={navbar} />
             </Header>
@@ -25,7 +25,7 @@ const Layout = ({ children }: LayoutType) => {
             <Footer copyright={title}>
                 <SocialMedia links={socialMedia} />
             </Footer>
-        </>
+        </div>
     )
 }
 

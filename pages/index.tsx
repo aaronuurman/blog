@@ -6,6 +6,7 @@ import { blogPosts } from '../lib/data'
 
 import spacing from '../styles/spacing.module.css'
 
+// TODO: Create SEO component
 const Home: NextPage = () => {
     let title = 'Latest blog posts'
     return (

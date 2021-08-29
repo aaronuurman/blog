@@ -14,12 +14,12 @@ const PostOverview = ({ date, timeToRead, tags, slug, title, overview, image }: 
     // Use Next.js image component
     return (
         <Article cssClasses={[classes.postoverview]}>
-            <Link href={`/${slug}`}>
+            <Link href={`/blog/${slug}`}>
                 <img className={classes.cover} src={image} alt={title} />
             </Link>
             <section className={[spacing.p_1]}>
                 <Tags tags={tags} />
-                <Link href={`/${slug}`}>
+                <Link href={`/blog/${slug}`}>
                     <a>
                         <h2>{title}</h2>
                         <p>{overview}</p>

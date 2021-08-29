@@ -6,7 +6,7 @@ body {
     font-family: 'Georgia', serif;
 }
 
-#gatsby-focus-wrapper {
+.wrapper {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 52px 1fr auto;
