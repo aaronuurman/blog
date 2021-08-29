@@ -7,6 +7,7 @@ import { BlogPost } from '../../interfaces'
 
 import spacing from '../styles/spacing.module.css'
 import classes from '../styles/single-post-template.module.css'
+import { getAllSlugs, getAllPosts } from '../../utils/posts-handler'
 
 const BlogPage = ({ slug, title, date, content }: BlogPost) => {
     // TODO: Add some commenting system, disqus or someting like that.
@@ -33,7 +34,6 @@ const BlogPage = ({ slug, title, date, content }: BlogPost) => {
 // TODO: Fix these ts-ignores
 // @ts-ignore
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
-    console.log(context)
     const { params } = context
     return {
         // @ts-ignore
@@ -42,6 +42,8 @@ export const getStaticProps: GetStaticProps = async (context: GetStaticPropsCont
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+    await getAllSlugs()
+    const allPosts = await getAllPosts()
     return {
         paths: blogPosts.map((post) => ({
             params: {

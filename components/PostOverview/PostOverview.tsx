@@ -1,21 +1,23 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 import { Tags } from '../Tags'
 import { Article } from '../Article'
 import { PostOverviewFooter } from '../PostOverviewFooter'
-import { DateType, ImageType, OverviewType, SlugType, TimeToReadType, TitleType } from '../../interfaces'
+import { PostOverviewType } from '../../interfaces/PostOverviewType'
 
 import classes from './postOverview.module.css'
 import spacing from '../../styles/spacing.module.css'
 
-interface Props extends DateType, TimeToReadType, Tags, SlugType, TitleType, OverviewType, ImageType {}
-
-const PostOverview = ({ date, timeToRead, tags, slug, title, overview, image }: Props) => {
-    // Use Next.js image component
+const PostOverview = ({ date, timeToRead, tags, slug, title, overview, image }: PostOverviewType) => {
     return (
         <Article cssClasses={[classes.postoverview]}>
             <Link href={`/blog/${slug}`}>
-                <img className={classes.cover} src={image} alt={title} />
+                <a>
+                    <div className={classes.cover}>
+                        <Image alt={title} src={image} layout="fill" objectFit="cover" />
+                    </div>
+                </a>
             </Link>
             <section className={[spacing.p_1]}>
                 <Tags tags={tags} />

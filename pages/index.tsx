@@ -1,17 +1,22 @@
-import React from 'react'
 import type { NextPage } from 'next'
-import { Articles, PostOverview } from '../components'
+import { GetStaticProps, GetStaticPropsContext } from 'next'
 
-import { blogPosts } from '../lib/data'
+import { Articles, PostOverview } from '../components'
+import { getPostOverviews } from '../utils/posts-handler'
+import { PostOverviewType } from '../interfaces/PostOverviewType'
 
 import spacing from '../styles/spacing.module.css'
 
+interface Props {
+    overviews: PostOverviewType[]
+}
+
 // TODO: Create SEO component
-const Home: NextPage = () => {
-    let title = 'Latest blog posts'
+const Home: NextPage<Props> = (props) => {
+    let title = 'Latest blog images'
     return (
         <Articles cssClasses={[spacing.p_x_08]}>
-            {blogPosts.map((post) => {
+            {props.overviews.map((post) => {
                 return (
                     <PostOverview
                         key={post.slug}
@@ -27,6 +32,12 @@ const Home: NextPage = () => {
             })}
         </Articles>
     )
+}
+
+export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
+    return {
+        props: { overviews: await getPostOverviews() } as Props,
+    }
 }
 
 export default Home

@@ -5,6 +5,7 @@
 
 .postoverview a .cover {
     height: 200px;
+    position: relative;
 }
 
 .postoverview section {
