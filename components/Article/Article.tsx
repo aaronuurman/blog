@@ -5,7 +5,7 @@ import { LayoutType, CssClassesType } from '../../interfaces'
 interface Props extends LayoutType, CssClassesType {}
 
 const Article = ({ cssClasses, children }: Props) => {
-    return <article className={cssClasses.join(' ')}>{children}</article>
+    return <article className={[classes.article, ...cssClasses].join(' ')}>{children}</article>
 }
 
 export default Article
