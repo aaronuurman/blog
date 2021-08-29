@@ -1,0 +1,68 @@
+---
+title: Common Language Runtime
+date: 2017-08-19
+image: ./clr.jpg
+imageAuthor: [
+	'Battlecreek Coffee Roasters',
+	'https://unsplash.com/@battlecreekcoffeeroasters?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
+]
+imageProvider: [
+	'Unsplash',
+	'https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
+]
+tags:
+- in depth
+resources: [
+	['https://en.wikipedia.org/wiki/Common_Language_Runtime', 'Wikipedia - CLR'],
+	['https://www.youtube.com/watch?v=gfkTfcpWqAY', 'Programming with Mosh'],
+	['https://unsplash.com/search/photos/language?photo=yiptq3TFiX8', 'Photo by Erik Eastman on Unsplash'],
+]
+published: true
+---
+
+The **Common Language Runtime (CLR)** is basically an application that manages
+the execution of .NET programs.<br /> It's made by Microsoft as a solution of
+following problems that existed in the software development world in early
+days.<br />
+
+One of the biggest problems that CLR solved was that when a code was compiled it
+could only run on the same platform. For example, let's say developer wrote
+C/C++ app and compiles it. The compiler translates that code to Native Code of
+the machine on which it was running. That means compiled code can run only on
+the machine with the same architecture. You can only imagine that this kind of
+limitation can't exist in today's world - we have already on the home machines
+with different CPU's and operating systems.
+
+Back in a days when Microsoft was designing C#, they took inspiration from Java
+world. In Java, when the code is compiled, it's not compiled into **Native
+Code** - instead, it's compiled to **Bytecode**.<br /> Microsoft applied same
+logic on C#.
+
+<Modal>
+
+<img src="https://i.imgur.com/1vMo2gR.png" alt="Common Language Runtime scheme" className="my-1" />
+
+</Modal>
+
+Now when C# code is compiled it's actually translated to CIL code (Common
+Intermediate Language). This way, it's independent of the machine on which it's
+compiled.<br /> Problem is, that CPU doesn't understand this code and some
+so-called translator is required. This is the place, where CLR comes in and
+translates CIL to Native Code. This process is called **Just-in-time Compilation
+(JIT)**. Whenever code is compiled via this technique, it can run on the machine
+with the different architecture (as long as machine have CLR).
+
+<br />
+<br />
+
+### Other benefits this runtime provides:
+
+-   Ability to use components that have coded in other languages.
+
+-   Language features - inheritance, interfaces, overloading and so on.
+
+-   Support for threads, structured exception handling, and custom attributes.
+
+-   Garbage collection.
+
+-   Delegates.

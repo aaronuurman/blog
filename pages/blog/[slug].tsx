@@ -8,12 +8,11 @@ import { BlogPost } from '../../interfaces'
 import spacing from '../styles/spacing.module.css'
 import classes from '../styles/single-post-template.module.css'
 
-
 const BlogPage = ({ slug, title, date, content }: BlogPost) => {
     // TODO: Add some commenting system, disqus or someting like that.
     const disqusConfig = {
         shortname: process.env.GATSBY_DISQUS_NAME,
-        config: {identifier: slug, title},
+        config: { identifier: slug, title },
     }
 
     return (

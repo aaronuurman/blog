@@ -1,0 +1,73 @@
+---
+title: Namespaces
+date: 2016-07-08
+image: ./space.jpg
+imageAuthor: [
+	'Alexander Andrews',
+	'https://unsplash.com/@alex_andrews?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
+]
+imageProvider: [
+	'Unsplash',
+	'https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'
+]
+tags:
+- oop
+resources: [
+	['https://www.udemy.com/', 'Udemy'],
+	['https://programmingwithmosh.com/', 'Moshfegh Hamedani’s blog'],
+	['https://www.udemy.com/entity-framework-tutorial/learn/v4/overview', 'Entity Framework in Depth'],
+	['https://www.udemy.com/the-complete-aspnet-mvc-5-course/learn/v4/overview', 'The Complete ASP.NET MVC 5 Course']
+]
+published: true
+---
+
+First, I would like to tell you how enthused I am about Udemy – and yes it’s not sponsored blog post. If you don’t know what’s Udemy then pause reading my post and go check it out.
+I finished my studies in June and from there started self-learning via Udemy. I have bought 2 courses, both are made by Moshfegh Hamedani. Links are under this blog post, go check out how good teacher this guy is. Now, back to namespaces… 😀
+Namespaces are used to organize code by declaring a scope that contains a set of related objects. Namespaces allow to develop new code alongside working code, it’s like coding sandbox. In C# you can declare following types in namespace:
+
+1. Another namespace
+2. Class
+3. Interface
+4. Struct
+5. Enum
+6. Delegate
+
+By default C# namespaces are public and this can’t be modified. In following example I have created namespace name1 and inside that class c1.
+
+```csharp {numberLines: true}
+namespace name1
+{
+		class c1 { }
+}
+```
+
+To access c1 class outside that namespace we simply navigate to it by name1.c1.
+Or better, we can declare at the beginning of the document that we are using namespace name1. Simply just write at the beginning of document Using name1. Now we can navigate to c1 class without putting name1 before it.
+In this namespace we can’t declare class with same name, like this:
+
+Wrong way:
+
+```csharp {numberLines: true}
+namespace name1
+{
+		class c1 { }
+
+		class c1 { }
+}
+```
+
+The compiler will now tell us that we already have declared class c1 in the current namespace. Now you may think that we can simply rename the new class and yes, that’s true. But imagine that you are not writing code alone. You have a team and another team member has declared this class already. And class name can’t be changed because this name describes it best. The solution is to use the same class name in other namespaces, like this:
+
+Right way:
+
+```csharp {numberLines: true}
+namespace name1
+{
+		class c1 { }
+}
+
+namespace name2
+{
+		class c1 { }
+}
+```
