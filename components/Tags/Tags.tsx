@@ -1,8 +1,7 @@
 import Link from 'next/link'
 
-import { TagsType } from '../../interfaces'
 import slugify from '../../utils/slugify'
-import { camelize } from '../../utils/string-helper'
+import { TagsType } from '../../interfaces'
 
 import classes from './tags.module.css'
 import spacing from '../../styles/spacing.module.css'

@@ -3,8 +3,9 @@ import path from 'path'
 import matter from 'gray-matter'
 
 import slugify from './slugify'
-import { PostOverviewType } from '../interfaces/PostOverviewType'
 import { truncate } from './string-helper'
+import { readingTime } from './reading-time'
+import { PostOverviewType } from '../interfaces/PostOverviewType'
 
 const postFileName = 'index.mdx'
 const postDirectory = path.join(process.cwd(), 'posts')
@@ -20,7 +21,8 @@ export const getAllPosts = async () => {
             const filePath: string = path.join(postDirectory, dirName, postFileName)
             const fileContents = fs.readFileSync(filePath, 'utf-8')
             const { data, content } = matter(fileContents)
-            return { data, content, slug }
+            const timeToRead = readingTime(content)
+            return { data, content, slug, timeToRead }
         })
         .sort((a, b) => {
             const aDate = new Date(a.data.date)
@@ -36,7 +38,7 @@ export const getPostOverviews = async (): Promise<PostOverviewType[]> => {
             date: JSON.stringify(post.data.date),
             tags: post.data.tags,
             title: post.data.title,
-            timeToRead: 1,
+            timeToRead: post.timeToRead,
             slug: post.slug,
             overview: truncate(post.content, 250),
             image: path.join('/images/posts', post.slug, post.data.image),
