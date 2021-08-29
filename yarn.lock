@@ -721,6 +721,7 @@ __metadata:
     "@types/react": 17.0.19
     "@types/react-modal": ^3.12.1
     autoprefixer: latest
+    date-fns: ^2.23.0
     eslint: 7.32.0
     eslint-config-next: 11.1.0
     gray-matter: ^4.0.3
@@ -1702,6 +1703,13 @@ __metadata:
   version: 3.0.1
   resolution: "data-uri-to-buffer@npm:3.0.1"
   checksum: c59c3009686a78c071806b72f4810856ec28222f0f4e252aa495ec027ed9732298ceea99c50328cf59b151dd34cbc3ad6150bbb43e41fc56fa19f48c99e9fc30
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^2.23.0":
+  version: 2.23.0
+  resolution: "date-fns@npm:2.23.0"
+  checksum: 485216d550255a548552db16379e7a5cd440e262b90fbdc0362f63ee71d0e74bd00ce29ca8d76b343f6df36c1ecb6f22edba0b72848a4c32674e755619695c1f
   languageName: node
   linkType: hard
 

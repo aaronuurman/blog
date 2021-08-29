@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { format } from 'date-fns'
 
 import slugify from './slugify'
 import { truncate } from './string-helper'
@@ -35,7 +36,7 @@ export const getAllPosts = async () => {
 export const getPostOverviews = async (): Promise<PostOverviewType[]> => {
     return (await getAllPosts()).map((post) => {
         return {
-            date: JSON.stringify(post.data.date),
+            date: format(post.data.date, 'MMM dd yyyy'),
             tags: post.data.tags,
             title: post.data.title,
             timeToRead: post.timeToRead,
