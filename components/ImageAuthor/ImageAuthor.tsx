@@ -1,11 +1,11 @@
 import { ExternalLink } from '@/components/Links'
 
+import { ImageAuthorType } from '@/interfaces/ImageAuthorType'
+import { ImageProviderType } from '@/interfaces/ImageProviderType'
+
 import classes from './imageAuthor.module.css'
 
-interface Props {
-    author: string
-    provider: string
-}
+interface Props extends ImageAuthorType, ImageProviderType {}
 
 const ImageAuthor = ({ author, provider }: Props) => {
     if ((!author || author.length === 0) && (!provider || provider.length === 0)) {
@@ -15,15 +15,15 @@ const ImageAuthor = ({ author, provider }: Props) => {
     if ((!author || author.length === 0) && (provider || provider.length !== 0)) {
         return (
             <div className={[classes.imgprovider]}>
-                Photo by: <ExternalLink title={provider[1]} url={provider[0]} />
+                Photo by: <ExternalLink title={provider[0]} url={provider[1]} />
             </div>
         )
     }
 
     return (
         <div className={[classes.imgprovider]}>
-            Photo by: <ExternalLink title={author[1]} url={author[0]} />/
-            <ExternalLink title={provider[1]} url={provider[0]} />
+            Photo by: <ExternalLink title={author[0]} url={author[1]} />/
+            <ExternalLink title={provider[0]} url={provider[1]} />
         </div>
     )
 }
