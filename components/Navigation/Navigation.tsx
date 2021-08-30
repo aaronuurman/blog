@@ -1,7 +1,7 @@
-import { WebLink } from '../Links'
+import { WebLink } from '@/components/Links'
 
 import classes from './navigation.module.css'
-import spacing from '../../styles/spacing.module.css'
+import spacing from '@/styles/spacing.module.css'
 
 interface Props {
     links: string[]

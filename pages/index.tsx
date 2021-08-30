@@ -1,9 +1,12 @@
 import type { NextPage } from 'next'
 import { GetStaticProps, GetStaticPropsContext } from 'next'
 
-import { getPostOverviews } from '../utils/posts-handler'
-import { Articles, SiteHead, PostOverview } from '../components'
-import { PostOverviewType } from '../interfaces/PostOverviewType'
+import { SiteHead } from '@/components/SiteHead'
+import { Articles } from '@/components/Articles'
+import { PostOverview } from '@/components/PostOverview'
+
+import { getPostOverviews } from '@/utils/posts-handler'
+import { PostOverviewType } from '@/interfaces/PostOverviewType'
 
 import spacing from '../styles/spacing.module.css'
 

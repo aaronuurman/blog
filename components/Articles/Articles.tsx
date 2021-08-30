@@ -1,5 +1,7 @@
+import { LayoutType } from '@/interfaces/LayoutType'
+import { CssClassesType } from '@/interfaces/CssClassesType'
+
 import classes from './articles.module.css'
-import { CssClassesType, LayoutType } from '../../interfaces'
 
 interface Props extends LayoutType, CssClassesType {}
 

@@ -1,10 +1,11 @@
 import React from 'react'
 
-import { WebLink } from '../Links'
-import { LayoutType, TitleType } from '../../interfaces'
+import { WebLink } from '@/components/Links'
+import { TitleType } from '@/interfaces/TitleType'
+import { LayoutType } from '@/interfaces/LayoutType'
 
 import classes from './header.module.css'
-import spacing from '../../styles/spacing.module.css'
+import spacing from '@/styles/spacing.module.css'
 
 interface Props extends LayoutType, TitleType {}
 

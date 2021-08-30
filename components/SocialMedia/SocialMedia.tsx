@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
-import { LinksType } from '../../interfaces'
-import extractHost from '../../utils/url-helper'
+import extractHost from '@/utils/url-helper'
+import { LinksType } from '@/interfaces/LinksType'
 
 import classes from './socialMedia.module.css'
 

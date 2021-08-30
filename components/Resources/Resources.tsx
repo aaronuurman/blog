@@ -1,9 +1,10 @@
-import { ExternalLink } from '../Links'
-import slugify from '../../utils/slugify'
-import { ResourceType, ResourcesType } from '../../interfaces'
+import slugify from '@/utils/slugify'
+import { ExternalLink } from '@/components/Links'
+import { ResourceType } from '@/interfaces/ResourceType'
+import { ResourcesType } from '@/interfaces/ResourcesType'
 
 import classes from './resources.module.css'
-import spacing from '../../styles/spacing.module.css'
+import spacing from '@/styles/spacing.module.css'
 
 const Resources = ({ resources }: ResourcesType) => {
     if (resources === null || resources.length === 0) {

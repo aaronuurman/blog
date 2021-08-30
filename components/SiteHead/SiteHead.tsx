@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
-import { Favicon } from '../Favicon'
-import { TitleType } from '../../interfaces'
+import { Favicon } from '@/components/Favicon'
+import { TitleType } from '@/interfaces/TitleType'
 
 const SiteHead = ({ title }: TitleType) => {
     return (

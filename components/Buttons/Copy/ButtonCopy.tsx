@@ -1,5 +1,6 @@
+import copyToClipboard from '@/utils/copy-to-clipboard'
+
 import classes from './copy.module.css'
-import copyToClipboard from '../../../utils/copy-to-clipboard'
 
 interface Props {
     codeObject: any

@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { Tags } from '../Tags'
-import { Article } from '../Article'
-import { PostOverviewFooter } from '../PostOverviewFooter'
-import { PostOverviewType } from '../../interfaces/PostOverviewType'
+import { Tags } from '@/components/Tags'
+import { Article } from '@/components/Article'
+import { PostOverviewType } from '@/interfaces/PostOverviewType'
+import { PostOverviewFooter } from '@/components/PostOverviewFooter'
 
 import classes from './postOverview.module.css'
-import spacing from '../../styles/spacing.module.css'
+import spacing from '@/styles/spacing.module.css'
 
 const PostOverview = ({ date, timeToRead, tags, slug, title, overview, image }: PostOverviewType) => {
     return (

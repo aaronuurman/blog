@@ -1,7 +1,8 @@
-import { CssClassesType, LayoutType } from '../../interfaces'
+import { LayoutType } from '@/interfaces/LayoutType'
+import { CssClassesType } from '@/interfaces/CssClassesType'
 
 import classes from './container.module.css'
-import spacing from '../../styles/spacing.module.css'
+import spacing from '@/styles/spacing.module.css'
 
 interface Props extends LayoutType, CssClassesType {}
 

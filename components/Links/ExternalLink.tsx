@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
-import { TitleType, UrlType } from '../../interfaces'
+import { UrlType } from '@/interfaces/UrlType'
+import { TitleType } from '@/interfaces/TitleType'
 
 interface Props extends TitleType, UrlType {}
 

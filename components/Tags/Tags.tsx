@@ -1,10 +1,10 @@
 import Link from 'next/link'
 
-import slugify from '../../utils/slugify'
-import { TagsType } from '../../interfaces'
+import slugify from '@/utils/slugify'
+import { TagsType } from '@/interfaces/TagsType'
 
 import classes from './tags.module.css'
-import spacing from '../../styles/spacing.module.css'
+import spacing from '@/styles/spacing.module.css'
 
 interface Props extends TagsType {}
 

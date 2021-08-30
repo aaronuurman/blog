@@ -1,4 +1,4 @@
-import { ExternalLink } from '../Links'
+import { ExternalLink } from '@/components/Links'
 
 import classes from './imageAuthor.module.css'
 

@@ -1,11 +1,11 @@
 import theme from 'prism-react-renderer/themes/nightOwl'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 
-import { ButtonCopy } from '../Buttons'
-import { CodeType } from '../../interfaces'
+import { CodeType } from '@/interfaces/CodeType'
+import { ButtonCopy } from '@/components/Buttons'
 
 import classes from './code.module.css'
-import spacing from '../../styles/spacing.module.css'
+import spacing from '@/styles/spacing.module.css'
 
 const Code = ({ codeString, language }: CodeType) => {
     return (

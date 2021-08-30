@@ -1,7 +1,8 @@
-import { CopyrightType, LayoutType } from '../../interfaces'
+import { LayoutType } from '@/interfaces/LayoutType'
+import { CopyrightType } from '@/interfaces/CopyrightType'
 
 import classes from './footer.module.css'
-import spacing from '../../styles/spacing.module.css'
+import spacing from '@/styles/spacing.module.css'
 
 interface Props extends LayoutType, CopyrightType {}
 

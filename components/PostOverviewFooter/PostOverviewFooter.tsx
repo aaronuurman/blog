@@ -1,6 +1,7 @@
-import { DateType, TimeToReadType } from '../../interfaces'
+import { DateType } from '@/interfaces/DateType'
+import { TimeToReadType } from '@/interfaces/TimeToReadType'
 
-import spacing from '../../styles/spacing.module.css'
+import spacing from '@/styles/spacing.module.css'
 import classes from './postOverviewFooter.module.css'
 
 interface Props extends DateType, TimeToReadType {}
