@@ -6,8 +6,6 @@ import { SocialMedia } from '@/components/SocialMedia'
 
 import { LayoutType } from '@/interfaces/LayoutType'
 
-import spacing from '@/styles/spacing.module.css'
-
 let title = 'Aaron Uurman'
 // TODO: Read navigation from config
 let navbar = ['home', 'about']
@@ -24,7 +22,7 @@ const Layout = ({ children }: LayoutType) => {
             <Header title={title}>
                 <Navigation links={navbar} />
             </Header>
-            <Container cssClasses={[spacing.p_y_2]}>{children}</Container>
+            <Container>{children}</Container>
             <Footer copyright={title}>
                 <SocialMedia links={socialMedia} />
             </Footer>

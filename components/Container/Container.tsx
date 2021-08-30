@@ -2,12 +2,18 @@ import { LayoutType } from '@/interfaces/LayoutType'
 import { CssClassesType } from '@/interfaces/CssClassesType'
 
 import classes from './container.module.css'
-import spacing from '@/styles/spacing.module.css'
 
 interface Props extends LayoutType, CssClassesType {}
 
+const getClassName = ({ cssClasses }: CssClassesType): string => {
+    if (cssClasses) {
+        return `${classes.container} ${cssClasses.join(', ')}`
+    }
+    return `${classes.container}`
+}
+
 const Container = ({ cssClasses, children }: Props) => {
-    return <div className={`${classes.container} ${spacing.p_x_08} ${cssClasses.join(', ')}`}>{children}</div>
+    return <div className={getClassName({ cssClasses })}>{children}</div>
 }
 
 export default Container

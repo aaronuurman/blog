@@ -14,7 +14,7 @@ body {
         'header'
         'content'
         'footer';
-    grid-gap: 10px;
+    grid-gap: 2.4em;
     min-height: 100vh;
 }
 
