@@ -1,9 +1,8 @@
-import Head from 'next/head'
 import type { NextPage } from 'next'
 import { GetStaticProps, GetStaticPropsContext } from 'next'
 
 import { getPostOverviews } from '../utils/posts-handler'
-import { Articles, Favicon, PostOverview } from '../components'
+import { Articles, SiteHead, PostOverview } from '../components'
 import { PostOverviewType } from '../interfaces/PostOverviewType'
 
 import spacing from '../styles/spacing.module.css'
@@ -16,12 +15,9 @@ interface Props {
 const Home: NextPage<Props> = (props) => {
     return (
         <>
-            <Head>
-                <title>Aaron Uurman's blog - Latest blog posts</title>
-                <Favicon />
-            </Head>
+            <SiteHead title={'Latest blog posts'} />
             <Articles cssClasses={[spacing.p_x_08]}>
-                {props.overviews.map((post) => {
+                {props.overviews.map((post: PostOverviewType) => {
                     return (
                         <PostOverview
                             key={post.slug}
