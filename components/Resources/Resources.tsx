@@ -8,7 +8,7 @@ import spacing from '@/styles/spacing.module.css'
 
 const Resource = ({ resource }: ResourceType) => {
     return (
-        <li className={spacing.p_b_1} key={slugify(resource[1])}>
+        <li className={spacing.p_b_1}>
             <ExternalLink title={resource[1]} url={resource[0]} />
         </li>
     )
@@ -23,7 +23,7 @@ const Resources = ({ resources }: ResourcesType) => {
             <summary>Available resources</summary>
             <ul className={[spacing.p_t_2, spacing.p_x_1].join(' ')}>
                 {resources.map((resource: ResourceType) => (
-                    <Resource resource={resource} />
+                    <Resource resource={resource} key={slugify(resource[1])} />
                 ))}
             </ul>
         </details>

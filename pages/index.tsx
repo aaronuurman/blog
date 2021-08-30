@@ -20,7 +20,7 @@ const Home: NextPage<Props> = (props) => {
         <>
             <SiteHead title={'Latest blog posts'} />
             <Articles cssClasses={[spacing.p_x_08]}>
-                {props.overviews.map((post: PostOverviewType) => {
+                {props.overviews.map((post: PostOverviewType, index: number) => {
                     return (
                         <PostOverview
                             key={post.slug}
@@ -31,6 +31,7 @@ const Home: NextPage<Props> = (props) => {
                             overview={post.overview}
                             timeToRead={post.timeToRead}
                             slug={post.slug}
+                            index={index}
                         />
                     )
                 })}

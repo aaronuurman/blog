@@ -1,17 +1,27 @@
+import Image from 'next/image'
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 
 import { Tags } from '@/components/Tags'
+import { Modal } from '@/components/Modal'
 import { Article } from '@/components/Article'
-import { PostType } from '@/interfaces/PostType'
 import { SiteHead } from '@/components/SiteHead'
 import { Resources } from '@/components/Resources'
 import { ImageAuthor } from '@/components/ImageAuthor'
 import { getAllSlugs, getPostBySlug } from '@/utils/posts-handler'
 
+import { PostType } from '@/interfaces/PostType'
+import { serialize } from 'next-mdx-remote/serialize'
+import { PostDataType } from '@/interfaces/PostDataType'
+
 import spacing from '@/styles/spacing.module.css'
+import classes from '@/styles/single-post-template.module.css'
 
 interface Props {
-    post: PostType
+    post: {
+        data: PostDataType
+        content
+    }
 }
 
 const BlogPage = ({ post }: Props) => {
@@ -25,9 +35,20 @@ const BlogPage = ({ post }: Props) => {
                     <Tags tags={post.data.tags} />
                 </section>
                 <section>
+                    <div className={classes.article_cover}>
+                        <Image
+                            alt={post.data.title}
+                            src={post.data.image}
+                            layout="fill"
+                            objectFit="cover"
+                            priority={true}
+                        />
+                    </div>
                     <ImageAuthor author={post.data.author} provider={post.data.provider} />
                 </section>
-                <section className={[spacing.m_t_2]}></section>
+                <section className={[spacing.m_t_2]}>
+                    <MDXRemote {...post.content} components={{ Modal }} />
+                </section>
                 <Resources resources={post.data.resources} />
             </Article>
         </>
@@ -37,8 +58,9 @@ const BlogPage = ({ post }: Props) => {
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
     const { params } = context
     const { slug } = params
+    const result: PostType | null = await getPostBySlug(slug)
     return {
-        props: { post: await getPostBySlug(slug) } as Props,
+        props: { post: { data: result?.data, content: await serialize(result?.content ?? '') } } as Props,
     }
 }
 

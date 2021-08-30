@@ -56,6 +56,10 @@ export const getPostOverviews = async (): Promise<PostOverviewType[]> => {
     })
 }
 
-export const getPostBySlug = async (slug: string) => {
-    return (await getAllPosts()).find((post: PostType) => post.data.slug === slug)
+export const getPostBySlug = async (slug: string): Promise<PostType | null> => {
+    const result: PostType | undefined = (await getAllPosts()).find((post: PostType) => post.data.slug === slug)
+    if (result) {
+        return { data: result.data, content: result.content } as PostType
+    }
+    return null
 }

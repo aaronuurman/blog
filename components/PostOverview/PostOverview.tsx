@@ -9,13 +9,17 @@ import { PostOverviewFooter } from '@/components/PostOverviewFooter'
 import classes from './postOverview.module.css'
 import spacing from '@/styles/spacing.module.css'
 
-const PostOverview = ({ date, timeToRead, tags, slug, title, overview, image }: PostOverviewType) => {
+interface Props extends PostOverviewType {
+    index: number
+}
+
+const PostOverview = ({ date, timeToRead, tags, slug, title, overview, image, index }: Props) => {
     return (
         <Article cssClasses={[classes.postoverview]}>
             <Link href={`/blog/${slug}`}>
                 <a>
                     <div className={classes.cover}>
-                        <Image alt={title} src={image} layout="fill" objectFit="cover" />
+                        <Image alt={title} src={image} layout="fill" objectFit="cover" priority={index < 3} />
                     </div>
                 </a>
             </Link>
