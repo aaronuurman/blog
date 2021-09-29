@@ -7,7 +7,9 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|graphql|md|mdx)\""
+        "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|graphql|md|mdx)\"",
+        "cypress:open": "cypress open",
+        "cypress:run": "cypress run"
     },
     "dependencies": {
         "@types/prismjs": "^1.16.6",
@@ -26,6 +28,7 @@
     "devDependencies": {
         "@types/react": "17.0.19",
         "autoprefixer": "latest",
+        "cypress": "^8.5.0",
         "eslint": "7.32.0",
         "eslint-config-next": "11.1.0",
         "prettier": "2.3.2",

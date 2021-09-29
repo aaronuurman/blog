@@ -20,7 +20,7 @@ import classes from '@/styles/single-post-template.module.css'
 interface Props {
     post: {
         data: PostDataType
-        content
+        content: MDXRemoteSerializeResult
     }
 }
 
@@ -46,7 +46,7 @@ const BlogPage = ({ post }: Props) => {
                     </div>
                     <ImageAuthor author={post.data.author} provider={post.data.provider} />
                 </section>
-                <section className={[spacing.m_t_2]}>
+                <section>
                     <MDXRemote {...post.content} components={{ Modal }} />
                 </section>
                 <Resources resources={post.data.resources} />
