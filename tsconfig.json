@@ -18,7 +18,8 @@
             "@/components/*": ["components/*"],
             "@/interfaces/*": ["interfaces/*"],
             "@/utils/*": ["utils/*"],
-            "@/styles/*": ["styles/*"]
+            "@/styles/*": ["styles/*"],
+            "@/cypress/*": ["cypress/*"]
         },
         "types": ["cypress"]
     },
